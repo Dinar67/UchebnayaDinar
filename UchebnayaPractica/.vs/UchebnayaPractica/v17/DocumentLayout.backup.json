@@ -7,7 +7,7 @@
       "RelativeMoniker": "D:0:0:{08A8F211-B9E6-46F2-940B-9113193F2232}|UchebnayaPractica\\UchebnayaPractica.csproj|solutionrelative:uchebnayapractica\\mainwindow.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{08A8F211-B9E6-46F2-940B-9113193F2232}|UchebnayaPractica\\UchebnayaPractica.csproj|c:\\users\\user\\source\\repos\\uchebnayadinar\\uchebnayapractica\\uchebnayapractica\\mainwindow.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{08A8F211-B9E6-46F2-940B-9113193F2232}|UchebnayaPractica\\UchebnayaPractica.csproj|C:\\Users\\user\\source\\repos\\UchebnayaDinar\\UchebnayaPractica\\uchebnayapractica\\mainwindow.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{08A8F211-B9E6-46F2-940B-9113193F2232}|UchebnayaPractica\\UchebnayaPractica.csproj|solutionrelative:uchebnayapractica\\mainwindow.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
@@ -18,8 +18,12 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 0,
+          "SelectedChildIndex": 1,
           "Children": [
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{1c4feeaa-4718-4aa9-859d-94ce25d182ba}"
+            },
             {
               "$type": "Document",
               "DocumentIndex": 0,
@@ -42,8 +46,7 @@
               "RelativeToolTip": "UchebnayaPractica\\MainWindow.xaml.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-10-14T07:46:50.998Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-10-14T07:46:50.998Z"
             }
           ]
         }
