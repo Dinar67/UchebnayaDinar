@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="07141cdfcc8941cb961344b332156be5" Name="Diagram1">
+        <EntityTypeShape EntityType="UchebkaModel.Accessories" Width="1.5" PointX="0.75" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="UchebkaModel.AcessoriesImage" Width="1.5" PointX="1.5" PointY="16" IsExpanded="true" />
+        <EntityTypeShape EntityType="UchebkaModel.Document" Width="1.5" PointX="8.25" PointY="8.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="UchebkaModel.Equipment" Width="1.5" PointX="3" PointY="2.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="UchebkaModel.Material" Width="1.5" PointX="3.75" PointY="26.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="UchebkaModel.MaterialImage" Width="1.5" PointX="1.5" PointY="36" IsExpanded="true" />
+        <EntityTypeShape EntityType="UchebkaModel.OperationSpecification" Width="1.5" PointX="3" PointY="8.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="UchebkaModel.Product" Width="1.5" PointX="0.75" PointY="8.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="UchebkaModel.ProductAccessories" Width="1.5" PointX="3" PointY="5.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="UchebkaModel.ProductDetail" Width="1.5" PointX="3" PointY="18.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="UchebkaModel.Role" Width="1.5" PointX="1.5" PointY="30.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="UchebkaModel.Size" Width="1.5" PointX="3" PointY="12.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="UchebkaModel.Standart" Width="1.5" PointX="1.5" PointY="38.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="UchebkaModel.Supplier" Width="1.5" PointX="1.5" PointY="22.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="UchebkaModel.sysdiagrams" Width="1.5" PointX="5.75" PointY="1.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="UchebkaModel.TypeAccessories" Width="1.5" PointX="1.5" PointY="24.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="UchebkaModel.TypeEquipment" Width="1.5" PointX="0.75" PointY="5.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="UchebkaModel.TypeMaterial" Width="1.5" PointX="1.5" PointY="40.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="UchebkaModel.Unit" Width="1.5" PointX="1.5" PointY="27.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="UchebkaModel.UserImage" Width="1.5" PointX="1.5" PointY="33" IsExpanded="true" />
+        <AssociationConnector Association="UchebkaModel.FK_Accessories_AcessoriesImage" ManuallyRouted="false" />
+        <AssociationConnector Association="UchebkaModel.FK_Accessories_Supplier1" ManuallyRouted="false" />
+        <AssociationConnector Association="UchebkaModel.FK_Accessories_TypeAccessories" ManuallyRouted="false" />
+        <AssociationConnector Association="UchebkaModel.FK_Accessories_Unit" ManuallyRouted="false" />
+        <AssociationConnector Association="UchebkaModel.FK_ProductAccessories_Accessories" ManuallyRouted="false" />
+        <AssociationConnector Association="UchebkaModel.FK_Equipment_TypeEquipment" ManuallyRouted="false" />
+        <AssociationConnector Association="UchebkaModel.FK_Material_MaterialImage" ManuallyRouted="false" />
+        <AssociationConnector Association="UchebkaModel.FK_Material_Standart" ManuallyRouted="false" />
+        <AssociationConnector Association="UchebkaModel.FK_Material_TypeMaterial" ManuallyRouted="false" />
+        <AssociationConnector Association="UchebkaModel.FK_Material_Unit" ManuallyRouted="false" />
+        <AssociationConnector Association="UchebkaModel.FK_OperationSpecification_Product" ManuallyRouted="false" />
+        <AssociationConnector Association="UchebkaModel.FK_OperationSpecification_TypeEquipment" ManuallyRouted="false" />
+        <AssociationConnector Association="UchebkaModel.FK_ProductAccessories_Product" ManuallyRouted="false" />
+        <AssociationConnector Association="UchebkaModel.FK_ProductDetail_Product" ManuallyRouted="false" />
+        <AssociationConnector Association="UchebkaModel.FK_ProductDetail_Product1" ManuallyRouted="false" />
+        <AssociationConnector Association="UchebkaModel.FK_Size_Product" ManuallyRouted="false" />
+        <AssociationConnector Association="UchebkaModel.FK_Size_Unit" ManuallyRouted="false" />
+        <EntityTypeShape EntityType="UchebkaModel.User" Width="1.5" PointX="3.75" PointY="31" />
+        <AssociationConnector Association="UchebkaModel.FK_User_Role" />
+        <AssociationConnector Association="UchebkaModel.FK_User_UserImage" />
+        <EntityTypeShape EntityType="UchebkaModel.Order" Width="1.5" PointX="6" PointY="19.625" />
+        <AssociationConnector Association="UchebkaModel.FK_Document_Order" />
+        <AssociationConnector Association="UchebkaModel.FK_Order_Product" />
+        <AssociationConnector Association="UchebkaModel.FK_Order_User2" />
+        <AssociationConnector Association="UchebkaModel.FK_Order_User3" />
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>

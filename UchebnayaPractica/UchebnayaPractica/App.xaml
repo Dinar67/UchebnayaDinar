@@ -4,6 +4,46 @@
              xmlns:local="clr-namespace:UchebnayaPractica"
              StartupUri="MainWindow.xaml">
     <Application.Resources>
-         
+        <Style TargetType="Image" x:Key="InteractionImage">
+            <Style.Triggers>
+                <Trigger Property="IsMouseOver" Value="False">
+                    <Setter Property="Effect">
+                        <Setter.Value>
+                            <DropShadowEffect Opacity="0" BlurRadius="10" Direction="314" ShadowDepth="5"></DropShadowEffect>
+                        </Setter.Value>
+                    </Setter>
+                </Trigger>
+                <Trigger Property="IsMouseOver" Value="True">
+                    <Setter Property="Effect">
+                        <Setter.Value>
+                            <DropShadowEffect Opacity="0.8" BlurRadius="10" Direction="314" ShadowDepth="5"></DropShadowEffect>
+                        </Setter.Value>
+                    </Setter>
+                </Trigger>
+            </Style.Triggers>
+        </Style>
+        
+        <DrawingImage x:Key="PersonDrawingImage">
+            <DrawingImage.Drawing>
+                <DrawingGroup ClipGeometry="M0,0 V1024 H1024 V0 H0 Z">
+                    <DrawingGroup Opacity="1" Transform="0.1,0,0,-0.1,0,1024">
+                        <GeometryDrawing Brush="#FFBB0C07" Geometry="F1 M1024,1024z M0,0z M4790,9829C3439,9738 2184,9062 1361,7981 473,6814 179,5283 570,3859 1070,2035 2633,678 4505,440 6424,197 8267,1110 9221,2775 9681,3578 9896,4538 9830,5490 9739,6794 9118,7978 8095,8797 7164,9542 5988,9909 4790,9829z M5405,9250C5592,9236 5814,9205 5985,9169 7490,8851 8710,7722 9135,6254 9416,5284 9324,4211 8881,3294 8677,2872 8444,2539 8120,2206 7584,1655 6927,1272 6185,1080 5142,809 4024,950 3095,1469 2005,2077 1249,3124 1016,4345 794,5511 1110,6744 1876,7700 2241,8156 2738,8558 3261,8821 3916,9149 4680,9302 5405,9250z" />
+                        <GeometryDrawing Brush="#FFBB0C07" Geometry="F1 M1024,1024z M0,0z M4928,7539C4327,7481 3959,7116 3851,6469 3793,6120 3804,5816 3885,5535 4088,4833 4675,4332 5217,4399 5748,4464 6243,4969 6386,5590 6477,5987 6412,6559 6237,6906 6000,7375 5539,7598 4928,7539z" />
+                        <GeometryDrawing Brush="#FFBB0C07" Geometry="F1 M1024,1024z M0,0z M3930,4369C3659,4296 3414,4149 3263,3969 3188,3881 3088,3701 3048,3583 2961,3332 3029,3112 3234,2978L3293,2940 5170,2940 7047,2940 7093,2971C7149,3008 7234,3099 7259,3149 7314,3256 7326,3414 7290,3553 7270,3632 7193,3810 7179,3810 7175,3810 7127,3860 7073,3921 6884,4134 6694,4263 6447,4345 6279,4401 6284,4401 6225,4324 6097,4155 5862,3977 5656,3895 5503,3833 5427,3819 5215,3813 4921,3805 4774,3832 4565,3935 4391,4021 4198,4176 4079,4327 4051,4362 4023,4390 4017,4389 4010,4389 3971,4380 3930,4369z" />
+                    </DrawingGroup>
+                </DrawingGroup>
+            </DrawingImage.Drawing>
+        </DrawingImage>
+        <DrawingImage x:Key="cross_svgrepo_comDrawingImage">
+            <DrawingImage.Drawing>
+                <DrawingGroup ClipGeometry="M0,0 V25 H25 V0 H0 Z">
+                    <DrawingGroup Opacity="1">
+                        <DrawingGroup Opacity="1" Transform="1,0,0,1,-469,-1041">
+                            <GeometryDrawing Brush="#FFBB0C07" Geometry="F0 M25,25z M0,0z M487.148,1053.48L492.813,1047.82C494.376,1046.26 494.376,1043.72 492.813,1042.16 491.248,1040.59 488.712,1040.59 487.148,1042.16L481.484,1047.82 475.82,1042.16C474.257,1040.59 471.721,1040.59 470.156,1042.16 468.593,1043.72 468.593,1046.26 470.156,1047.82L475.82,1053.48 470.156,1059.15C468.593,1060.71 468.593,1063.25 470.156,1064.81 471.721,1066.38 474.257,1066.38 475.82,1064.81L481.484,1059.15 487.148,1064.81C488.712,1066.38 491.248,1066.38 492.813,1064.81 494.376,1063.25 494.376,1060.71 492.813,1059.15L487.148,1053.48" />
+                        </DrawingGroup>
+                    </DrawingGroup>
+                </DrawingGroup>
+            </DrawingImage.Drawing>
+        </DrawingImage>
     </Application.Resources>
 </Application>
