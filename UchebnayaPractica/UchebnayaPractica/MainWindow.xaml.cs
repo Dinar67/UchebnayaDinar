@@ -1,7 +1,7 @@
 ﻿using System.IO;
 using System.Linq;
 using System.Windows;
-using UchebnayaPractica.Database;
+using UchebnayaPractica.Pages;
 
 namespace UchebnayaPractica
 {
@@ -14,38 +14,37 @@ namespace UchebnayaPractica
         {
             InitializeComponent();
             App.mainWindow = this;
-
-
-            LoadImage();
-
-        }
-
-        private void LoadImage()
-        {
-            string path = @"C:\Users\user\Desktop\Учебная практика\Сессия1\Ресурсы - Сессия 1\data\Изображения\Фото пользователей";
-
-            string[] files = Directory.GetFiles(path);
-            foreach(var file in files)
+            if (File.Exists(@"RememberMe.txt"))
             {
-                string fileName = Path.GetFileNameWithoutExtension(file);
-                User user = App.db.User.FirstOrDefault(x => x.Login == fileName);
-                if(user != null)
+                string Login = File.ReadAllText(@"RememberMe.txt");
+                App.currentUser = App.db.User.FirstOrDefault(x => x.Login == Login);
+                if(App.currentUser == null)
                 {
-                    UserImage image = App.db.UserImage.Add(new UserImage()
-                    {
-                        Photo = File.ReadAllBytes(file),
-                    });
-                    App.db.SaveChanges();
-                    user.IdUserImage = image.Id;
-                    App.db.SaveChanges();
+                    MainFrame.Navigate(new AuthPage());
+                    return;
                 }
+                MainFrame.Navigate(new MainPage());
+                Exit.Visibility = Visibility.Visible;
+                Person.Visibility = Visibility.Visible;
+                Methods.TakeInformation("Вы успешно зашли в систему!");
             }
-            App.db.SaveChanges();
+            else
+                MainFrame.Navigate(new AuthPage());
         }
-
         private void Image_MouseDown(object sender, System.Windows.Input.MouseButtonEventArgs e)
         {
             Application.Current.Shutdown();
+        }
+
+        private void Exit_MouseDown(object sender, System.Windows.Input.MouseButtonEventArgs e)
+        {
+            if (File.Exists(@"RememberMe.txt"))
+            {
+                File.Delete(@"RememberMe.txt");
+                MainFrame.Navigate(new AuthPage());
+                Exit.Visibility = Visibility.Collapsed;
+                Person.Visibility = Visibility.Collapsed;
+            }
         }
     }
 }

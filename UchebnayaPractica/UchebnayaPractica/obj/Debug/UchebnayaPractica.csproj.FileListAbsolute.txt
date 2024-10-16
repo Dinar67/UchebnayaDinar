@@ -39,3 +39,9 @@ C:\Users\user\source\repos\UchebnayaDinar\UchebnayaPractica\UchebnayaPractica\bi
 C:\Users\user\source\repos\UchebnayaDinar\UchebnayaPractica\UchebnayaPractica\bin\Debug\SharpVectors.Runtime.Wpf.xml
 C:\Users\user\source\repos\UchebnayaDinar\UchebnayaPractica\UchebnayaPractica\bin\Debug\ru\EntityFramework.SqlServer.resources.dll
 C:\Users\user\source\repos\UchebnayaDinar\UchebnayaPractica\UchebnayaPractica\obj\Debug\App.baml
+C:\Users\user\source\repos\UchebnayaDinar\UchebnayaPractica\UchebnayaPractica\obj\Debug\Pages\AuthPage.g.cs
+C:\Users\user\source\repos\UchebnayaDinar\UchebnayaPractica\UchebnayaPractica\obj\Debug\Pages\RegPage.g.cs
+C:\Users\user\source\repos\UchebnayaDinar\UchebnayaPractica\UchebnayaPractica\obj\Debug\Pages\AuthPage.baml
+C:\Users\user\source\repos\UchebnayaDinar\UchebnayaPractica\UchebnayaPractica\obj\Debug\Pages\RegPage.baml
+C:\Users\user\source\repos\UchebnayaDinar\UchebnayaPractica\UchebnayaPractica\obj\Debug\Pages\MainPage.g.cs
+C:\Users\user\source\repos\UchebnayaDinar\UchebnayaPractica\UchebnayaPractica\obj\Debug\Pages\MainPage.baml

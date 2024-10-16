@@ -10,5 +10,6 @@ namespace UchebnayaPractica
     {
         public static UchebkaEntities db = new UchebkaEntities();
         public static MainWindow mainWindow;
+        public static User currentUser;
     }
 }

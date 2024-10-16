@@ -3,12 +3,28 @@
   "WorkspaceRootPath": "C:\\Users\\user\\source\\repos\\UchebnayaDinar\\UchebnayaPractica\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{08A8F211-B9E6-46F2-940B-9113193F2232}|UchebnayaPractica\\UchebnayaPractica.csproj|C:\\Users\\user\\source\\repos\\UchebnayaDinar\\UchebnayaPractica\\uchebnayapractica\\mainwindow.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{08A8F211-B9E6-46F2-940B-9113193F2232}|UchebnayaPractica\\UchebnayaPractica.csproj|c:\\users\\user\\source\\repos\\uchebnayadinar\\uchebnayapractica\\uchebnayapractica\\pages\\authpage.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{08A8F211-B9E6-46F2-940B-9113193F2232}|UchebnayaPractica\\UchebnayaPractica.csproj|solutionrelative:uchebnayapractica\\pages\\authpage.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{08A8F211-B9E6-46F2-940B-9113193F2232}|UchebnayaPractica\\UchebnayaPractica.csproj|c:\\users\\user\\source\\repos\\uchebnayadinar\\uchebnayapractica\\uchebnayapractica\\mainwindow.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{08A8F211-B9E6-46F2-940B-9113193F2232}|UchebnayaPractica\\UchebnayaPractica.csproj|solutionrelative:uchebnayapractica\\mainwindow.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{08A8F211-B9E6-46F2-940B-9113193F2232}|UchebnayaPractica\\UchebnayaPractica.csproj|c:\\users\\user\\source\\repos\\uchebnayadinar\\uchebnayapractica\\uchebnayapractica\\mainwindow.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}",
+      "AbsoluteMoniker": "D:0:0:{08A8F211-B9E6-46F2-940B-9113193F2232}|UchebnayaPractica\\UchebnayaPractica.csproj|C:\\Users\\user\\source\\repos\\UchebnayaDinar\\UchebnayaPractica\\uchebnayapractica\\mainwindow.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}",
       "RelativeMoniker": "D:0:0:{08A8F211-B9E6-46F2-940B-9113193F2232}|UchebnayaPractica\\UchebnayaPractica.csproj|solutionrelative:uchebnayapractica\\mainwindow.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{08A8F211-B9E6-46F2-940B-9113193F2232}|UchebnayaPractica\\UchebnayaPractica.csproj|c:\\users\\user\\source\\repos\\uchebnayadinar\\uchebnayapractica\\uchebnayapractica\\pages\\mainpage.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}",
+      "RelativeMoniker": "D:0:0:{08A8F211-B9E6-46F2-940B-9113193F2232}|UchebnayaPractica\\UchebnayaPractica.csproj|solutionrelative:uchebnayapractica\\pages\\mainpage.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{08A8F211-B9E6-46F2-940B-9113193F2232}|UchebnayaPractica\\UchebnayaPractica.csproj|c:\\users\\user\\source\\repos\\uchebnayadinar\\uchebnayapractica\\uchebnayapractica\\pages\\mainpage.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{08A8F211-B9E6-46F2-940B-9113193F2232}|UchebnayaPractica\\UchebnayaPractica.csproj|solutionrelative:uchebnayapractica\\pages\\mainpage.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{08A8F211-B9E6-46F2-940B-9113193F2232}|UchebnayaPractica\\UchebnayaPractica.csproj|c:\\users\\user\\source\\repos\\uchebnayadinar\\uchebnayapractica\\uchebnayapractica\\pages\\regpage.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{08A8F211-B9E6-46F2-940B-9113193F2232}|UchebnayaPractica\\UchebnayaPractica.csproj|solutionrelative:uchebnayapractica\\pages\\regpage.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{08A8F211-B9E6-46F2-940B-9113193F2232}|UchebnayaPractica\\UchebnayaPractica.csproj|C:\\Users\\user\\source\\repos\\UchebnayaDinar\\UchebnayaPractica\\uchebnayapractica\\app.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}",
@@ -17,6 +33,14 @@
     {
       "AbsoluteMoniker": "D:0:0:{08A8F211-B9E6-46F2-940B-9113193F2232}|UchebnayaPractica\\UchebnayaPractica.csproj|C:\\Users\\user\\source\\repos\\UchebnayaDinar\\UchebnayaPractica\\uchebnayapractica\\app.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{08A8F211-B9E6-46F2-940B-9113193F2232}|UchebnayaPractica\\UchebnayaPractica.csproj|solutionrelative:uchebnayapractica\\app.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{08A8F211-B9E6-46F2-940B-9113193F2232}|UchebnayaPractica\\UchebnayaPractica.csproj|c:\\users\\user\\source\\repos\\uchebnayadinar\\uchebnayapractica\\uchebnayapractica\\pages\\authpage.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}",
+      "RelativeMoniker": "D:0:0:{08A8F211-B9E6-46F2-940B-9113193F2232}|UchebnayaPractica\\UchebnayaPractica.csproj|solutionrelative:uchebnayapractica\\pages\\authpage.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{08A8F211-B9E6-46F2-940B-9113193F2232}|UchebnayaPractica\\UchebnayaPractica.csproj|c:\\users\\user\\source\\repos\\uchebnayadinar\\uchebnayapractica\\uchebnayapractica\\pages\\regpage.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}",
+      "RelativeMoniker": "D:0:0:{08A8F211-B9E6-46F2-940B-9113193F2232}|UchebnayaPractica\\UchebnayaPractica.csproj|solutionrelative:uchebnayapractica\\pages\\regpage.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{08A8F211-B9E6-46F2-940B-9113193F2232}|UchebnayaPractica\\UchebnayaPractica.csproj|C:\\Users\\user\\source\\repos\\UchebnayaDinar\\UchebnayaPractica\\uchebnayapractica\\methods.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
@@ -30,11 +54,62 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 4,
+          "SelectedChildIndex": 2,
           "Children": [
             {
               "$type": "Document",
-              "DocumentIndex": 2,
+              "DocumentIndex": 4,
+              "Title": "MainPage.xaml.cs",
+              "DocumentMoniker": "C:\\Users\\user\\source\\repos\\UchebnayaDinar\\UchebnayaPractica\\UchebnayaPractica\\Pages\\MainPage.xaml.cs",
+              "RelativeDocumentMoniker": "UchebnayaPractica\\Pages\\MainPage.xaml.cs",
+              "ToolTip": "C:\\Users\\user\\source\\repos\\UchebnayaDinar\\UchebnayaPractica\\UchebnayaPractica\\Pages\\MainPage.xaml.cs",
+              "RelativeToolTip": "UchebnayaPractica\\Pages\\MainPage.xaml.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAEAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-10-16T14:16:32.323Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "MainPage.xaml",
+              "DocumentMoniker": "C:\\Users\\user\\source\\repos\\UchebnayaDinar\\UchebnayaPractica\\UchebnayaPractica\\Pages\\MainPage.xaml",
+              "RelativeDocumentMoniker": "UchebnayaPractica\\Pages\\MainPage.xaml",
+              "ToolTip": "C:\\Users\\user\\source\\repos\\UchebnayaDinar\\UchebnayaPractica\\UchebnayaPractica\\Pages\\MainPage.xaml",
+              "RelativeToolTip": "UchebnayaPractica\\Pages\\MainPage.xaml",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003549|",
+              "WhenOpened": "2024-10-16T13:45:20.141Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "Pages\\AuthPage.xaml.cs",
+              "DocumentMoniker": "C:\\Users\\user\\source\\repos\\UchebnayaDinar\\UchebnayaPractica\\UchebnayaPractica\\Pages\\AuthPage.xaml.cs",
+              "RelativeDocumentMoniker": "UchebnayaPractica\\Pages\\AuthPage.xaml.cs",
+              "ToolTip": "C:\\Users\\user\\source\\repos\\UchebnayaDinar\\UchebnayaPractica\\UchebnayaPractica\\Pages\\AuthPage.xaml.cs",
+              "RelativeToolTip": "UchebnayaPractica\\Pages\\AuthPage.xaml.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAB4AAABFAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-10-16T11:30:41.802Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "MainWindow.xaml.cs",
+              "DocumentMoniker": "C:\\Users\\user\\source\\repos\\UchebnayaDinar\\UchebnayaPractica\\UchebnayaPractica\\MainWindow.xaml.cs",
+              "RelativeDocumentMoniker": "UchebnayaPractica\\MainWindow.xaml.cs",
+              "ToolTip": "C:\\Users\\user\\source\\repos\\UchebnayaDinar\\UchebnayaPractica\\UchebnayaPractica\\MainWindow.xaml.cs",
+              "RelativeToolTip": "UchebnayaPractica\\MainWindow.xaml.cs",
+              "ViewState": "AgIAABAAAAAAAAAAAAAQwC0AAAA4AAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-10-14T07:46:50.998Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 6,
               "Title": "App.xaml",
               "DocumentMoniker": "C:\\Users\\user\\source\\repos\\UchebnayaDinar\\UchebnayaPractica\\UchebnayaPractica\\App.xaml",
               "RelativeDocumentMoniker": "UchebnayaPractica\\App.xaml",
@@ -46,7 +121,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 1,
+              "DocumentIndex": 2,
               "Title": "MainWindow.xaml",
               "DocumentMoniker": "C:\\Users\\user\\source\\repos\\UchebnayaDinar\\UchebnayaPractica\\UchebnayaPractica\\MainWindow.xaml",
               "RelativeDocumentMoniker": "UchebnayaPractica\\MainWindow.xaml",
@@ -58,19 +133,57 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 3,
+              "DocumentIndex": 5,
+              "Title": "RegPage.xaml.cs",
+              "DocumentMoniker": "C:\\Users\\user\\source\\repos\\UchebnayaDinar\\UchebnayaPractica\\UchebnayaPractica\\Pages\\RegPage.xaml.cs",
+              "RelativeDocumentMoniker": "UchebnayaPractica\\Pages\\RegPage.xaml.cs",
+              "ToolTip": "C:\\Users\\user\\source\\repos\\UchebnayaDinar\\UchebnayaPractica\\UchebnayaPractica\\Pages\\RegPage.xaml.cs",
+              "RelativeToolTip": "UchebnayaPractica\\Pages\\RegPage.xaml.cs",
+              "ViewState": "AgIAAEkAAAAAAAAAAAAkwFsAAAAgAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-10-16T11:31:31.546Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 7,
               "Title": "App.xaml.cs",
               "DocumentMoniker": "C:\\Users\\user\\source\\repos\\UchebnayaDinar\\UchebnayaPractica\\UchebnayaPractica\\App.xaml.cs",
               "RelativeDocumentMoniker": "UchebnayaPractica\\App.xaml.cs",
               "ToolTip": "C:\\Users\\user\\source\\repos\\UchebnayaDinar\\UchebnayaPractica\\UchebnayaPractica\\App.xaml.cs",
               "RelativeToolTip": "UchebnayaPractica\\App.xaml.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAsAAAAsAAAAAAAAAA==",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAwAAAAnAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-10-15T13:55:22.792Z"
+              "WhenOpened": "2024-10-15T13:55:22.792Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 4,
+              "DocumentIndex": 8,
+              "Title": "AuthPage.xaml",
+              "DocumentMoniker": "C:\\Users\\user\\source\\repos\\UchebnayaDinar\\UchebnayaPractica\\UchebnayaPractica\\Pages\\AuthPage.xaml",
+              "RelativeDocumentMoniker": "UchebnayaPractica\\Pages\\AuthPage.xaml",
+              "ToolTip": "C:\\Users\\user\\source\\repos\\UchebnayaDinar\\UchebnayaPractica\\UchebnayaPractica\\Pages\\AuthPage.xaml",
+              "RelativeToolTip": "UchebnayaPractica\\Pages\\AuthPage.xaml",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003549|",
+              "WhenOpened": "2024-10-16T11:13:23.89Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 9,
+              "Title": "RegPage.xaml",
+              "DocumentMoniker": "C:\\Users\\user\\source\\repos\\UchebnayaDinar\\UchebnayaPractica\\UchebnayaPractica\\Pages\\RegPage.xaml",
+              "RelativeDocumentMoniker": "UchebnayaPractica\\Pages\\RegPage.xaml",
+              "ToolTip": "C:\\Users\\user\\source\\repos\\UchebnayaDinar\\UchebnayaPractica\\UchebnayaPractica\\Pages\\RegPage.xaml",
+              "RelativeToolTip": "UchebnayaPractica\\Pages\\RegPage.xaml",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003549|",
+              "WhenOpened": "2024-10-16T11:13:45.163Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 10,
               "Title": "Methods.cs",
               "DocumentMoniker": "C:\\Users\\user\\source\\repos\\UchebnayaDinar\\UchebnayaPractica\\UchebnayaPractica\\Methods.cs",
               "RelativeDocumentMoniker": "UchebnayaPractica\\Methods.cs",
@@ -79,19 +192,6 @@
               "ViewState": "AgIAAAAAAAAAAAAAAAAAABkAAABBAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2024-10-15T13:56:36.084Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 0,
-              "Title": "MainWindow.xaml.cs",
-              "DocumentMoniker": "C:\\Users\\user\\source\\repos\\UchebnayaDinar\\UchebnayaPractica\\UchebnayaPractica\\MainWindow.xaml.cs",
-              "RelativeDocumentMoniker": "UchebnayaPractica\\MainWindow.xaml.cs",
-              "ToolTip": "C:\\Users\\user\\source\\repos\\UchebnayaDinar\\UchebnayaPractica\\UchebnayaPractica\\MainWindow.xaml.cs",
-              "RelativeToolTip": "UchebnayaPractica\\MainWindow.xaml.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAACUAAAAdAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-10-14T07:46:50.998Z",
-              "EditorCaption": ""
             }
           ]
         }

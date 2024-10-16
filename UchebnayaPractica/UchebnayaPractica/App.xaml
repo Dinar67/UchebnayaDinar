@@ -4,6 +4,7 @@
              xmlns:local="clr-namespace:UchebnayaPractica"
              StartupUri="MainWindow.xaml">
     <Application.Resources>
+        
         <Style TargetType="Image" x:Key="InteractionImage">
             <Style.Triggers>
                 <Trigger Property="IsMouseOver" Value="False">
@@ -45,5 +46,59 @@
                 </DrawingGroup>
             </DrawingImage.Drawing>
         </DrawingImage>
+        <DrawingImage x:Key="arrow_ios_back_svgrepo_comDrawingImage">
+            <DrawingImage.Drawing>
+                <DrawingGroup ClipGeometry="M0,0 V24 H24 V0 H0 Z">
+                    <DrawingGroup Opacity="1">
+                        <DrawingGroup Opacity="1">
+                            <DrawingGroup Transform="6.12303176911189E-17,1,-1,6.12303176911189E-17,24,0">
+                                <GeometryDrawing>
+                                    <GeometryDrawing.Brush>
+                                        <SolidColorBrush Color="#FFBB0C07" Opacity="0" />
+                                    </GeometryDrawing.Brush>
+                                    <GeometryDrawing.Geometry>
+                                        <RectangleGeometry RadiusX="0" RadiusY="0" Rect="0,0,24,24" />
+                                    </GeometryDrawing.Geometry>
+                                </GeometryDrawing>
+                            </DrawingGroup>
+                            <GeometryDrawing Brush="#FFBB0C07" Geometry="F1 M24,24z M0,0z M13.83,19A1,1,0,0,1,13.05,18.63L8.22,12.63A1,1,0,0,1,8.22,11.36L13.22,5.36A1,1,0,0,1,14.76,6.64L10.29,12 14.61,17.36A1,1,0,0,1,13.83,19z" />
+                        </DrawingGroup>
+                    </DrawingGroup>
+                </DrawingGroup>
+            </DrawingImage.Drawing>
+        </DrawingImage>
+        <DrawingImage x:Key="exit_svgrepo_comDrawingImage">
+            <DrawingImage.Drawing>
+                <DrawingGroup ClipGeometry="M0,0 V24 H24 V0 H0 Z">
+                    <DrawingGroup Opacity="1">
+                        <GeometryDrawing Geometry="F1 M24,24z M0,0z M12,15L15,12 M15,12L12,9 M15,12L4,12 M4,7.24802L4,7.2002C4,6.08009 4,5.51962 4.21799,5.0918 4.40973,4.71547 4.71547,4.40973 5.0918,4.21799 5.51962,4 6.08009,4 7.2002,4L16.8002,4C17.9203,4 18.4796,4 18.9074,4.21799 19.2837,4.40973 19.5905,4.71547 19.7822,5.0918 20,5.5192 20,6.07899 20,7.19691L20,16.8036C20,17.9215 20,18.4805 19.7822,18.9079 19.5905,19.2842 19.2837,19.5905 18.9074,19.7822 18.48,20 17.921,20 16.8031,20L7.19691,20C6.07899,20 5.5192,20 5.0918,19.7822 4.71547,19.5905 4.40973,19.2839 4.21799,18.9076 4,18.4798 4,17.9201 4,16.8L4,16.75">
+                            <GeometryDrawing.Pen>
+                                <Pen Brush="#FFBB0C07" Thickness="2" StartLineCap="Round" EndLineCap="Round" LineJoin="Round" MiterLimit="1" />
+                            </GeometryDrawing.Pen>
+                        </GeometryDrawing>
+                    </DrawingGroup>
+                </DrawingGroup>
+            </DrawingImage.Drawing>
+        </DrawingImage>
+
+        <Style TargetType="Button" x:Key="StilyzedButton">
+            <Style.Resources>
+                <Style TargetType="Border">
+                    <Setter Property="CornerRadius" Value="15"></Setter>
+                </Style>
+            </Style.Resources>
+            <Setter Property="Effect">
+                <Setter.Value>
+                    <DropShadowEffect Opacity="0.8" BlurRadius="10" Direction="314" ShadowDepth="5"></DropShadowEffect>
+                </Setter.Value>
+            </Setter>
+            <Setter Property="Background" Value="#FFBB0C07"></Setter>
+            <Setter Property="Foreground" Value="White"></Setter>
+            <Setter Property="Height" Value="30"> </Setter>
+        </Style>
+
+        <Style TargetType="TextBlock">
+            <Setter Property="FontFamily" Value="Century Gothic"></Setter>
+        </Style>
     </Application.Resources>
 </Application>

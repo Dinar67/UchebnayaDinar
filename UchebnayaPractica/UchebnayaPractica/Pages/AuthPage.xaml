@@ -1,0 +1,29 @@
+﻿<Page x:Class="UchebnayaPractica.Pages.AuthPage"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:local="clr-namespace:UchebnayaPractica.Pages"
+      mc:Ignorable="d" 
+      d:DesignHeight="600" d:DesignWidth="1000"
+      Title="AuthPage" Background="White">
+
+    <Grid>
+        <StackPanel HorizontalAlignment="Center" VerticalAlignment="Center">
+            <TextBlock Text="Авторизация" FontWeight="Bold" FontSize="26" HorizontalAlignment="Center" Margin="0,0,0,20"/>
+            <StackPanel Orientation="Horizontal" HorizontalAlignment="Center" Margin="0 10 0 10">
+                <TextBlock Text="Логин:" VerticalAlignment="Center" Width="80"/>
+                <TextBox Name="LoginTb" VerticalAlignment="Center" Width="200" >
+                    
+                </TextBox>
+            </StackPanel>
+            <StackPanel Orientation="Horizontal" HorizontalAlignment="Center">
+                <TextBlock Text="Пароль:" Width="80" VerticalAlignment="Center" />
+                <PasswordBox Name="PasswordPb" Width="200" VerticalAlignment="Center" />
+            </StackPanel>
+            <CheckBox Name="RememberCb" Content="Запомнить меня" HorizontalAlignment="Center" VerticalAlignment="Center" Margin="0,10,0,20"/>
+            <Button Name="EnterBtn" Style="{StaticResource StilyzedButton}" Content="Войти" Width="150" HorizontalAlignment="Center" VerticalAlignment="Center" Click="EnterBtn_Click"/>
+            <TextBlock HorizontalAlignment="Center" Margin="0 5 0 0"><Hyperlink x:Name="RegLink" Foreground="#FFBB0C07" TextDecorations="None" Click="RegLink_Click" >- Зарегистрироваться -</Hyperlink></TextBlock>
+        </StackPanel>
+    </Grid>
+</Page>
