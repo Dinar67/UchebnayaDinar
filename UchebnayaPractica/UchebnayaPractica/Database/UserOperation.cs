@@ -12,19 +12,13 @@ namespace UchebnayaPractica.Database
     using System;
     using System.Collections.Generic;
     
-    public partial class Supplier
+    public partial class UserOperation
     {
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
-        public Supplier()
-        {
-            this.Accessories = new HashSet<Accessories>();
-        }
+        public int Id { get; set; }
+        public Nullable<int> IdOperation { get; set; }
+        public string Login { get; set; }
     
-        public string SupplierName { get; set; }
-        public string Address { get; set; }
-        public string DeliveryTime { get; set; }
-    
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<Accessories> Accessories { get; set; }
+        public virtual Operation Operation { get; set; }
+        public virtual User User { get; set; }
     }
 }

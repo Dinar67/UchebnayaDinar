@@ -30,7 +30,7 @@ namespace UchebnayaPractica.Pages
                 if(RememberCb.IsChecked == true)
                     File.WriteAllText(@"RememberMe.txt", user.Login);
                 App.currentUser = user;
-                NavigationService.Navigate(new MainPage());
+                NavigationService.Navigate(new EmployeePage());
                 Methods.TakeInformation("Вы успешно зашли в систему!");
                 App.mainWindow.Exit.Visibility = Visibility.Visible;
                 App.mainWindow.Person.Visibility = Visibility.Visible;

@@ -12,7 +12,7 @@
     <Property Name="IdAcessoriesImage" Type="int" />
     <Property Name="IdTypeAccessories" Type="int" />
     <Property Name="Price" Type="decimal" Precision="10" Scale="2" />
-    <Property Name="Weight" Type="decimal" Precision="10" Scale="2" />
+    <Property Name="Weight" Type="decimal" Precision="10" Scale="4" />
   </EntityType>
   <EntityType Name="AcessoriesImage">
     <Key>
@@ -52,7 +52,7 @@
     <Property Name="PriceOneKg" Type="decimal" Precision="10" Scale="2" />
     <Property Name="IdStandart" Type="int" />
     <Property Name="WidthMetr" Type="decimal" Precision="10" Scale="2" />
-    <Property Name="MassOneMetr" Type="decimal" Precision="10" Scale="2" />
+    <Property Name="MassOneMetr" Type="decimal" Precision="12" Scale="5" />
   </EntityType>
   <EntityType Name="MaterialImage">
     <Key>
@@ -60,6 +60,14 @@
     </Key>
     <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
     <Property Name="Photo" Type="varbinary(max)" />
+  </EntityType>
+  <EntityType Name="Operation">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Name" Type="nvarchar(max)" />
+    <Property Name="Login" Type="nvarchar" MaxLength="100" Nullable="false" />
   </EntityType>
   <EntityType Name="OperationSpecification">
     <Key>
@@ -111,6 +119,15 @@
     <Property Name="IdDetail" Type="int" Nullable="false" />
     <Property Name="Count" Type="int" />
   </EntityType>
+  <EntityType Name="ProductMaterial">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" Nullable="false" />
+    <Property Name="IdProduct" Type="int" />
+    <Property Name="MaterialArticle" Type="nvarchar" MaxLength="10" Nullable="false" />
+    <Property Name="Count" Type="decimal" Precision="10" Scale="2" Nullable="false" />
+  </EntityType>
   <EntityType Name="Role">
     <Key>
       <PropertyRef Name="Id" />
@@ -132,7 +149,7 @@
     <Key>
       <PropertyRef Name="Id" />
     </Key>
-    <Property Name="Id" Type="int" Nullable="false" />
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
     <Property Name="Name" Type="nvarchar(max)" />
   </EntityType>
   <EntityType Name="Supplier">
@@ -141,7 +158,7 @@
     </Key>
     <Property Name="SupplierName" Type="nvarchar" MaxLength="50" Nullable="false" />
     <Property Name="Address" Type="nvarchar(max)" />
-    <Property Name="DeliveryTime" Type="datetime" />
+    <Property Name="DeliveryTime" Type="nvarchar(max)" />
   </EntityType>
   <EntityType Name="sysdiagrams">
     <Key>
@@ -157,7 +174,7 @@
     <Key>
       <PropertyRef Name="Id" />
     </Key>
-    <Property Name="Id" Type="int" Nullable="false" />
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
     <Property Name="Name" Type="nvarchar(max)" />
   </EntityType>
   <EntityType Name="TypeEquipment">
@@ -178,7 +195,7 @@
     <Key>
       <PropertyRef Name="Id" />
     </Key>
-    <Property Name="Id" Type="int" Nullable="false" />
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
     <Property Name="Name" Type="nvarchar(max)" />
   </EntityType>
   <EntityType Name="User">
@@ -192,6 +209,10 @@
     <Property Name="FirstName" Type="nvarchar" MaxLength="50" />
     <Property Name="Patronymic" Type="nvarchar" MaxLength="50" />
     <Property Name="IdUserImage" Type="int" />
+    <Property Name="DateBithday" Type="date" />
+    <Property Name="Address" Type="nvarchar(max)" />
+    <Property Name="Post" Type="nvarchar(max)" />
+    <Property Name="Education" Type="nvarchar(max)" />
   </EntityType>
   <EntityType Name="UserImage">
     <Key>
@@ -199,6 +220,14 @@
     </Key>
     <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
     <Property Name="Photo" Type="varbinary(max)" />
+  </EntityType>
+  <EntityType Name="UserOperation">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="IdOperation" Type="int" />
+    <Property Name="Login" Type="nvarchar" MaxLength="100" Nullable="false" />
   </EntityType>
   <Association Name="FK_Accessories_AcessoriesImage">
     <End Role="AcessoriesImage" Type="Self.AcessoriesImage" Multiplicity="0..1" />
@@ -320,6 +349,18 @@
       </Dependent>
     </ReferentialConstraint>
   </Association>
+  <Association Name="FK_Operation_User">
+    <End Role="User" Type="Self.User" Multiplicity="1" />
+    <End Role="Operation" Type="Self.Operation" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="User">
+        <PropertyRef Name="Login" />
+      </Principal>
+      <Dependent Role="Operation">
+        <PropertyRef Name="Login" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
   <Association Name="FK_OperationSpecification_Product">
     <End Role="Product" Type="Self.Product" Multiplicity="1" />
     <End Role="OperationSpecification" Type="Self.OperationSpecification" Multiplicity="*" />
@@ -428,6 +469,30 @@
       </Dependent>
     </ReferentialConstraint>
   </Association>
+  <Association Name="FK_ProductMaterial_Material">
+    <End Role="Material" Type="Self.Material" Multiplicity="1" />
+    <End Role="ProductMaterial" Type="Self.ProductMaterial" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Material">
+        <PropertyRef Name="Article" />
+      </Principal>
+      <Dependent Role="ProductMaterial">
+        <PropertyRef Name="MaterialArticle" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_ProductMaterial_Product">
+    <End Role="Product" Type="Self.Product" Multiplicity="0..1" />
+    <End Role="ProductMaterial" Type="Self.ProductMaterial" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Product">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="ProductMaterial">
+        <PropertyRef Name="IdProduct" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
   <Association Name="FK_Size_Product">
     <End Role="Product" Type="Self.Product" Multiplicity="0..1" />
     <End Role="Size" Type="Self.Size" Multiplicity="*" />
@@ -476,6 +541,30 @@
       </Dependent>
     </ReferentialConstraint>
   </Association>
+  <Association Name="FK_UserOperation_Operation">
+    <End Role="Operation" Type="Self.Operation" Multiplicity="0..1" />
+    <End Role="UserOperation" Type="Self.UserOperation" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Operation">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="UserOperation">
+        <PropertyRef Name="IdOperation" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_UserOperation_User">
+    <End Role="User" Type="Self.User" Multiplicity="1" />
+    <End Role="UserOperation" Type="Self.UserOperation" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="User">
+        <PropertyRef Name="Login" />
+      </Principal>
+      <Dependent Role="UserOperation">
+        <PropertyRef Name="Login" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
   <EntityContainer Name="Хранилище UchebkaModelContainer">
     <EntitySet Name="Accessories" EntityType="Self.Accessories" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="AcessoriesImage" EntityType="Self.AcessoriesImage" Schema="dbo" store:Type="Tables" />
@@ -483,11 +572,13 @@
     <EntitySet Name="Equipment" EntityType="Self.Equipment" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="Material" EntityType="Self.Material" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="MaterialImage" EntityType="Self.MaterialImage" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Operation" EntityType="Self.Operation" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="OperationSpecification" EntityType="Self.OperationSpecification" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="Order" EntityType="Self.Order" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="Product" EntityType="Self.Product" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="ProductAccessories" EntityType="Self.ProductAccessories" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="ProductDetail" EntityType="Self.ProductDetail" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="ProductMaterial" EntityType="Self.ProductMaterial" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="Role" EntityType="Self.Role" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="Size" EntityType="Self.Size" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="Standart" EntityType="Self.Standart" Schema="dbo" store:Type="Tables" />
@@ -499,6 +590,7 @@
     <EntitySet Name="Unit" EntityType="Self.Unit" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="User" EntityType="Self.User" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="UserImage" EntityType="Self.UserImage" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="UserOperation" EntityType="Self.UserOperation" Schema="dbo" store:Type="Tables" />
     <AssociationSet Name="FK_Accessories_AcessoriesImage" Association="Self.FK_Accessories_AcessoriesImage">
       <End Role="AcessoriesImage" EntitySet="AcessoriesImage" />
       <End Role="Accessories" EntitySet="Accessories" />
@@ -539,6 +631,10 @@
       <End Role="Unit" EntitySet="Unit" />
       <End Role="Material" EntitySet="Material" />
     </AssociationSet>
+    <AssociationSet Name="FK_Operation_User" Association="Self.FK_Operation_User">
+      <End Role="User" EntitySet="User" />
+      <End Role="Operation" EntitySet="Operation" />
+    </AssociationSet>
     <AssociationSet Name="FK_OperationSpecification_Product" Association="Self.FK_OperationSpecification_Product">
       <End Role="Product" EntitySet="Product" />
       <End Role="OperationSpecification" EntitySet="OperationSpecification" />
@@ -575,6 +671,14 @@
       <End Role="Product" EntitySet="Product" />
       <End Role="ProductDetail" EntitySet="ProductDetail" />
     </AssociationSet>
+    <AssociationSet Name="FK_ProductMaterial_Material" Association="Self.FK_ProductMaterial_Material">
+      <End Role="Material" EntitySet="Material" />
+      <End Role="ProductMaterial" EntitySet="ProductMaterial" />
+    </AssociationSet>
+    <AssociationSet Name="FK_ProductMaterial_Product" Association="Self.FK_ProductMaterial_Product">
+      <End Role="Product" EntitySet="Product" />
+      <End Role="ProductMaterial" EntitySet="ProductMaterial" />
+    </AssociationSet>
     <AssociationSet Name="FK_Size_Product" Association="Self.FK_Size_Product">
       <End Role="Product" EntitySet="Product" />
       <End Role="Size" EntitySet="Size" />
@@ -590,6 +694,14 @@
     <AssociationSet Name="FK_User_UserImage" Association="Self.FK_User_UserImage">
       <End Role="UserImage" EntitySet="UserImage" />
       <End Role="User" EntitySet="User" />
+    </AssociationSet>
+    <AssociationSet Name="FK_UserOperation_Operation" Association="Self.FK_UserOperation_Operation">
+      <End Role="Operation" EntitySet="Operation" />
+      <End Role="UserOperation" EntitySet="UserOperation" />
+    </AssociationSet>
+    <AssociationSet Name="FK_UserOperation_User" Association="Self.FK_UserOperation_User">
+      <End Role="User" EntitySet="User" />
+      <End Role="UserOperation" EntitySet="UserOperation" />
     </AssociationSet>
   </EntityContainer>
 </Schema>

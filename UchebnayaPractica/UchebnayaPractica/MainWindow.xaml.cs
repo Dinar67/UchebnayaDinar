@@ -23,7 +23,7 @@ namespace UchebnayaPractica
                     MainFrame.Navigate(new AuthPage());
                     return;
                 }
-                MainFrame.Navigate(new MainPage());
+                MainFrame.Navigate(new EmployeePage());
                 Exit.Visibility = Visibility.Visible;
                 Person.Visibility = Visibility.Visible;
                 Methods.TakeInformation("Вы успешно зашли в систему!");
@@ -45,6 +45,16 @@ namespace UchebnayaPractica
                 Exit.Visibility = Visibility.Collapsed;
                 Person.Visibility = Visibility.Collapsed;
             }
+        }
+
+        private void Material_MouseDown(object sender, System.Windows.Input.MouseButtonEventArgs e)
+        {
+            MainFrame.Navigate(new AccessoriesAndMaterialsPage());
+        }
+
+        private void Employee_MouseDown(object sender, System.Windows.Input.MouseButtonEventArgs e)
+        {
+            MainFrame.Navigate(new EmployeePage());
         }
     }
 }

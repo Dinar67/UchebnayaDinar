@@ -45,3 +45,9 @@ C:\Users\user\source\repos\UchebnayaDinar\UchebnayaPractica\UchebnayaPractica\ob
 C:\Users\user\source\repos\UchebnayaDinar\UchebnayaPractica\UchebnayaPractica\obj\Debug\Pages\RegPage.baml
 C:\Users\user\source\repos\UchebnayaDinar\UchebnayaPractica\UchebnayaPractica\obj\Debug\Pages\MainPage.g.cs
 C:\Users\user\source\repos\UchebnayaDinar\UchebnayaPractica\UchebnayaPractica\obj\Debug\Pages\MainPage.baml
+C:\Users\user\source\repos\UchebnayaDinar\UchebnayaPractica\UchebnayaPractica\obj\Debug\Pages\EmployeePage.g.cs
+C:\Users\user\source\repos\UchebnayaDinar\UchebnayaPractica\UchebnayaPractica\obj\Debug\Pages\AddEditEmployee.g.cs
+C:\Users\user\source\repos\UchebnayaDinar\UchebnayaPractica\UchebnayaPractica\obj\Debug\Pages\AddEditEmployee.baml
+C:\Users\user\source\repos\UchebnayaDinar\UchebnayaPractica\UchebnayaPractica\obj\Debug\Pages\EmployeePage.baml
+C:\Users\user\source\repos\UchebnayaDinar\UchebnayaPractica\UchebnayaPractica\obj\Debug\Pages\AccessoriesAndMaterialsPage.g.cs
+C:\Users\user\source\repos\UchebnayaDinar\UchebnayaPractica\UchebnayaPractica\obj\Debug\Pages\AccessoriesAndMaterialsPage.baml

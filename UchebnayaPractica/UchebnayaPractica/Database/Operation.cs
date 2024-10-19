@@ -12,31 +12,20 @@ namespace UchebnayaPractica.Database
     using System;
     using System.Collections.Generic;
     
-    public partial class Material
+    public partial class Operation
     {
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
-        public Material()
+        public Operation()
         {
-            this.ProductMaterial = new HashSet<ProductMaterial>();
+            this.UserOperation = new HashSet<UserOperation>();
         }
     
-        public string Article { get; set; }
+        public int Id { get; set; }
         public string Name { get; set; }
-        public Nullable<int> IdUnit { get; set; }
-        public Nullable<decimal> Count { get; set; }
-        public string SupplierName { get; set; }
-        public Nullable<int> IdMaterialImage { get; set; }
-        public Nullable<int> IdTypeMaterial { get; set; }
-        public Nullable<decimal> PriceOneKg { get; set; }
-        public Nullable<int> IdStandart { get; set; }
-        public Nullable<decimal> WidthMetr { get; set; }
-        public Nullable<decimal> MassOneMetr { get; set; }
+        public string Login { get; set; }
     
-        public virtual MaterialImage MaterialImage { get; set; }
-        public virtual Standart Standart { get; set; }
-        public virtual TypeMaterial TypeMaterial { get; set; }
-        public virtual Unit Unit { get; set; }
+        public virtual User User { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<ProductMaterial> ProductMaterial { get; set; }
+        public virtual ICollection<UserOperation> UserOperation { get; set; }
     }
 }

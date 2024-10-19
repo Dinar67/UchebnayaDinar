@@ -20,6 +20,10 @@ namespace UchebnayaPractica
         {
             MessageBox.Show(text, "Информация", MessageBoxButton.OK, MessageBoxImage.Information);
         }
+        public static void TakeWarning(string text)
+        {
+            MessageBox.Show(text, "Предупреждение", MessageBoxButton.OK, MessageBoxImage.Warning);
+        }
         public static bool TakeChoice(string text)
         {
             MessageBoxResult result =  MessageBox.Show(text, "Информация", MessageBoxButton.YesNo, MessageBoxImage.Warning);
