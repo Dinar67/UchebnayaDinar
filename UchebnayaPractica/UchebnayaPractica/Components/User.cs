@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Linq;
+using System.Windows;
 
 namespace UchebnayaPractica.Database
 {
@@ -35,6 +36,11 @@ namespace UchebnayaPractica.Database
                 }
                 return operations;
             }
+        }
+
+        public Visibility canEdit
+        {
+            get { return RoleId != 3 ? Visibility.Collapsed : Visibility.Visible; }
         }
     }
 }

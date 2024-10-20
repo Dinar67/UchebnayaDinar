@@ -10,11 +10,11 @@ none
 false
 DEBUG;TRACE
 C:\Users\user\source\repos\UchebnayaDinar\UchebnayaPractica\UchebnayaPractica\App.xaml
-7-512833671
+9-335563402
 2-1293242089
-411295249434
+46-834357194
 27-1226647224
-MainWindow.xaml;Pages\AccessoriesAndMaterialsPage.xaml;Pages\AddEditEmployee.xaml;Pages\AuthPage.xaml;Pages\EmployeePage.xaml;Pages\MainPage.xaml;Pages\RegPage.xaml;
+MainWindow.xaml;Pages\AccessoriesAndMaterialsPage.xaml;Pages\AddEditAccessoriesPage.xaml;Pages\AddEditMaterialPage.xaml;Pages\AddEditEmployee.xaml;Pages\AuthPage.xaml;Pages\EmployeePage.xaml;Pages\MainPage.xaml;Pages\RegPage.xaml;
 
 False
 

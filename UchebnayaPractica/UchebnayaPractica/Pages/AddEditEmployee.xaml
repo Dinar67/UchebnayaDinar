@@ -9,7 +9,7 @@
       Title="AddEditEmployee">
 
     <Grid>
-        <StackPanel HorizontalAlignment="Center" VerticalAlignment="Center">
+        <StackPanel x:Name="MainPanel" HorizontalAlignment="Center" VerticalAlignment="Center">
             <TextBlock x:Name="TitleTb" FontWeight="Bold" FontSize="20" Foreground="#FFBB0C07" HorizontalAlignment="Center" Margin="0 0 0 20">Добавить сотрудника</TextBlock>
             <StackPanel Orientation="Horizontal" >
                 <StackPanel VerticalAlignment="Center">
@@ -41,11 +41,11 @@
                         <TextBlock Width="100" VerticalAlignment="Center">Дата рождения</TextBlock>
                         <DatePicker Width="200" SelectedDate="{Binding DateBithday}"></DatePicker>
                     </StackPanel>
-                    <StackPanel Orientation="Horizontal" Margin="0 0 0 10">
+                    <StackPanel Orientation="Horizontal" Margin="0 0 0 10" x:Name="PostPanel">
                         <TextBlock Width="100">Должность</TextBlock>
                         <TextBox Width="200" Text="{Binding Post}"></TextBox>
                     </StackPanel>
-                    <StackPanel Orientation="Vertical" Margin="0 0 0 10">
+                    <StackPanel Orientation="Vertical" Margin="0 0 0 10" x:Name="EducationPanel">
                         <TextBlock Width="100" Margin="0 0 0 5" HorizontalAlignment="Left">Образование</TextBlock>
                         <TextBox TextWrapping="Wrap" Height="80"  Text="{Binding Education}"></TextBox>
                     </StackPanel>
@@ -54,7 +54,17 @@
                         <TextBox TextWrapping="Wrap" Height="50"  Text="{Binding Address}"></TextBox>
                     </StackPanel>
                 </StackPanel>
-                <StackPanel Margin="30 0 0 0" VerticalAlignment="Center">
+                <StackPanel x:Name="PhotoPanel" Margin="40 0 0 0" VerticalAlignment="Center" Visibility="Collapsed">
+                    <Border CornerRadius="5" BorderThickness="2" BorderBrush="#FFBB0C07">
+                        <Image x:Name="MainImage" Width="300" Height="350"></Image>
+                    </Border>
+                    <StackPanel Orientation="Horizontal" HorizontalAlignment="Center" Margin="0 5 0 0">
+                        <Button x:Name="LoadBtn" Width="250" Margin="0 0 20 0" Style="{StaticResource StilyzedButton}" Click="LoadBtn_Click" >Загрузить изображение</Button>
+                        <Image x:Name="DeleteImage" Width="30" Style="{StaticResource InteractionImage}" Source="{StaticResource delete_1_svgrepo_comDrawingImage}" MouseDown="DeleteImage_MouseDown" ></Image>
+                    </StackPanel>
+
+                </StackPanel>
+                <StackPanel x:Name="OperationPanel" Visibility="Visible" Margin="30 0 0 0" VerticalAlignment="Center">
                     <ListView x:Name="MyList" Width="400" Height="350">
                         <ListView.View>
                             <GridView>
@@ -66,10 +76,10 @@
                                             </DataTemplate>
                                         </GridViewColumn.CellTemplate>
                                     </GridViewColumn>
-                                    <GridViewColumn Header="delete" Width="70">
+                                    <GridViewColumn Header="delete" Width="70" >
                                         <GridViewColumn.CellTemplate>
                                             <DataTemplate>
-                                                <Image x:Name="Delete" Width="70" HorizontalAlignment="Center" Height="30" Style="{StaticResource InteractionImage}" Source="{StaticResource delete_1_svgrepo_comDrawingImage}" MouseDown="Delete_MouseDown"></Image>
+                                                <Image Visibility="{Binding User.canEdit}" x:Name="Delete" Width="70" HorizontalAlignment="Center" Height="30" Style="{StaticResource InteractionImage}" Source="{StaticResource delete_1_svgrepo_comDrawingImage}" MouseDown="Delete_MouseDown"></Image>
                                             </DataTemplate>
                                         </GridViewColumn.CellTemplate>
                                     </GridViewColumn>

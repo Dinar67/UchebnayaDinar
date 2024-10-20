@@ -44,17 +44,22 @@ namespace UchebnayaPractica.Pages
 
         private void AddEmployeeBtn_Click(object sender, RoutedEventArgs e)
         {
+            App.employeePage = this;
             NavigationService.Navigate(new AddEditEmployee(new User(), true));
         }
 
         private void Delete_MouseDown(object sender, MouseButtonEventArgs e)
         {
             if (Methods.TakeChoice("Вы точно хотите удалить сотрудника?"))
+            {
+                App.db.User.Remove((sender as Image).DataContext as User);
                 Methods.TakeInformation("Успешно удалено!");
+            }
         }
 
         private void Edit_MouseDown(object sender, MouseButtonEventArgs e)
         {
+            App.employeePage = this;
             NavigationService.Navigate(new AddEditEmployee((sender as Image).DataContext as User,false, "Редактировать сотрудника"));
         }
 

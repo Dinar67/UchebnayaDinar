@@ -13,7 +13,7 @@ namespace UchebnayaPractica.Pages
     /// </summary>
     public partial class RegPage : Page
     {
-        User user = new User();
+        User user = new User() { RoleId = 4 };
         UserImage image = new UserImage();
         public RegPage()
         {
@@ -53,34 +53,40 @@ namespace UchebnayaPractica.Pages
             Regex FIO = new Regex(@"^[А-ЯA-Z][а-яa-z]*$");
             if (LastNameTb.Text == "" || !FIO.IsMatch(LastNameTb.Text))
             {
-                MessageBox.Show("Вы неправильно ввели фаимлию!");
+                Methods.TakeWarning("Вы неправильно ввели фаимлию!");
                 return;
             }
 
             if (txtFirstName.Text == "" || !FIO.IsMatch(txtFirstName.Text))
             {
-                MessageBox.Show("Вы неправильно ввели имя!");
+                Methods.TakeWarning("Вы неправильно ввели имя!");
                 return;
             }
             if (txtMiddleName.Text == "" || !FIO.IsMatch(txtMiddleName.Text))
             {
-                MessageBox.Show("Вы неправильно ввели отчество!");
+                Methods.TakeWarning("Вы неправильно ввели отчество!");
                 return;
             }
 
             if (App.db.User.Any(x => x.Login == txtLogin.Text))
             {
-                MessageBox.Show("Этот логин уже используется!");
+                Methods.TakeWarning("Этот логин уже используется!");
                 return;
             }
             if (txtPassword.Password == "")
             {
-                MessageBox.Show("Вы не ввели пароль!");
+                Methods.TakeWarning("Вы не ввели пароль!");
                 return;
             }
             if(txtPassword.Password.Length < 5)
             {
-                MessageBox.Show("Пароль должен содержать не меньше 5 символов!");
+                Methods.TakeWarning("Пароль должен содержать не меньше 5 символов!");
+                return;
+            }
+            string message = ValidatePassword(txtPassword.Password);
+            if(message != "")
+            {
+                Methods.TakeWarning(message);
                 return;
             }
 
@@ -95,6 +101,20 @@ namespace UchebnayaPractica.Pages
 
             NavigationService.Navigate(new AuthPage());
             Methods.TakeInformation("Вы зарегистрированны!");
+        }
+        private string ValidatePassword(string password)
+        {
+            if (password.Length < 4 || password.Length > 16)
+                return "Пароль должен содержать от 4 до 16 символов.";
+            const string forbiddenChars = "*&{}|+";
+            if (forbiddenChars.Any(x => password.Contains(x)))
+                return "Пароль не должен содержать символы *, &, {, }, |, +.";
+            if (!Regex.IsMatch(password, "[A-Z]"))
+                return "Пароль должен содержать хотя бы одну заглавную букву.";
+            if (!Regex.IsMatch(password, @"\d"))
+                return "Пароль должен содержать хотя бы одну цифру.";
+
+            return "";
         }
 
         private void Back_MouseDown(object sender, System.Windows.Input.MouseButtonEventArgs e)

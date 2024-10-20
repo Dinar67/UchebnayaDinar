@@ -16,10 +16,50 @@
                 </TabItem.Header>
                 <Grid>
                     <Grid.RowDefinitions>
-                        <RowDefinition Height="40*"/>
+                        <RowDefinition Height="50*"/>
                         <RowDefinition Height="510*"/>
+                        <RowDefinition Height="30*"/>
                     </Grid.RowDefinitions>
-                    <ListView x:Name="MaterialsListView" Grid.Row="1">
+                    <StackPanel Orientation="Horizontal" Grid.Row="0">
+                        <TextBox Margin="20 0 0 0" Width="200" Height="25" x:Name="MaterialSearchTb" TextChanged="MaterialSearchTb_TextChanged" >
+                            <TextBox.Style>
+                                <Style TargetType="TextBox" xmlns:sys="clr-namespace:System;assembly=mscorlib">
+                                    <Style.Resources>
+                                        <VisualBrush x:Key="CueBannerBrush" AlignmentX="Left" AlignmentY="Center" Stretch="None">
+                                            <VisualBrush.Visual>
+                                                <Label Content="Поиск" Foreground="#FF909090" FontWeight="DemiBold" />
+                                            </VisualBrush.Visual>
+                                        </VisualBrush>
+                                    </Style.Resources>
+                                    <Style.Triggers>
+                                        <Trigger Property="Text" Value="{x:Static sys:String.Empty}">
+                                            <Setter Property="Background" Value="{StaticResource CueBannerBrush}" />
+                                        </Trigger>
+                                        <Trigger Property="Text" Value="{x:Null}">
+                                            <Setter Property="Background" Value="{StaticResource CueBannerBrush}" />
+                                        </Trigger>
+                                        <Trigger Property="IsKeyboardFocused" Value="True">
+                                            <Setter Property="Background" Value="White" />
+                                        </Trigger>
+                                    </Style.Triggers>
+                                </Style>
+                            </TextBox.Style>
+                        </TextBox>
+                        <TextBlock Margin="40 0 0 0" VerticalAlignment="Center">Сортировать</TextBlock>
+                        <ComboBox x:Name="MaterialSortCb" Height="25" Width="200" Margin="15 0" SelectionChanged="MaterialSortCb_SelectionChanged" >
+                            <ComboBoxItem>Нет</ComboBoxItem>
+                            <ComboBoxItem>По Артиклу</ComboBoxItem>
+                            <ComboBoxItem>По наименованию в алфавитном</ComboBoxItem>
+                            <ComboBoxItem>По наименованию против алфавитного</ComboBoxItem>
+                            <ComboBoxItem>По количеству в порядке возрастания</ComboBoxItem>
+                            <ComboBoxItem>По количеству в порядке убывания</ComboBoxItem>
+                            <ComboBoxItem>По поставщику</ComboBoxItem>
+                        </ComboBox>
+                        <TextBlock Margin="30 0 0 0" VerticalAlignment="Center">Склад</TextBlock>
+                        <ComboBox x:Name="MaterialFilterCb" Height="25" DisplayMemberPath="Name" Width="200" Margin="15 0" SelectionChanged="MaterialFilterCb_SelectionChanged"></ComboBox>
+                        <Button x:Name="AddMaterialBtn" Style="{StaticResource StilyzedButton}" Margin="10 0 0 0" Width="100" Click="AddMaterialBtn_Click" >Добавить</Button>
+                    </StackPanel>
+                    <ListView x:Name="MaterialsListView" Grid.Row="1" >
                         <ListView.View>
                             <GridView>
                                 <GridViewColumn Header="Артикул" Width="100" DisplayMemberBinding="{Binding Article}"/>
@@ -29,24 +69,28 @@
                                 <GridViewColumn Header="Закуп. цена" Width="100" DisplayMemberBinding="{Binding PriceOneKg}"/>
                                 <GridViewColumn Header="Поставщик" Width="150" DisplayMemberBinding="{Binding SupplierName}"/>
                                 <GridViewColumn Header="Срок доставки" Width="100" DisplayMemberBinding="{Binding Supplier.DeliveryTime}"/>
-                                <GridViewColumn Header="Edit" Width="100">
+                                <GridViewColumn Header="Edit" Width="85">
                                     <GridViewColumn.CellTemplate>
                                         <DataTemplate>
-                                            <Image x:Name="EditMaterial" Style="{StaticResource InteractionImage}" Source="{StaticResource edit_3_svgrepo_comDrawingImage}" Width="95" Height="30" MouseDown="EditMaterial_MouseDown"></Image>
+                                            <Image x:Name="EditMaterial" Visibility="{Binding canEdit}" Style="{StaticResource InteractionImage}" Source="{StaticResource edit_3_svgrepo_comDrawingImage}" Width="95" Height="30" MouseDown="EditMaterial_MouseDown"></Image>
                                         </DataTemplate>
                                     </GridViewColumn.CellTemplate>
                                 </GridViewColumn>
-                                <GridViewColumn Header="Delete" Width="100">
+                                <GridViewColumn Header="Delete" Width="85">
                                     <GridViewColumn.CellTemplate>
                                         <DataTemplate>
-                                            <Image x:Name="DeleteMaterial" Style="{StaticResource InteractionImage}" Source="{StaticResource delete_1_svgrepo_comDrawingImage}" Width="95" Height="30" MouseDown="DeleteMaterial_MouseDown"></Image>
+                                            <Image x:Name="DeleteMaterial" Visibility="{Binding canEdit}" Style="{StaticResource InteractionImage}" Source="{StaticResource delete_1_svgrepo_comDrawingImage}" Width="95" Height="30" MouseDown="DeleteMaterial_MouseDown"></Image>
                                         </DataTemplate>
                                     </GridViewColumn.CellTemplate>
                                 </GridViewColumn>
                             </GridView>
                         </ListView.View>
                     </ListView>
-
+                    <StackPanel Grid.Row="2" VerticalAlignment="Center" HorizontalAlignment="Center" Orientation="Horizontal">
+                        <TextBlock x:Name="MaterialCountTb" FontWeight="Bold">16 из 100</TextBlock>
+                        <TextBlock FontWeight="Bold" Margin="40 0 0 0">общая закупочная стоимость: </TextBlock>
+                        <TextBlock x:Name="MaterialPriceTb" FontWeight="Bold" Margin="10 0 0 0">10000 руб.</TextBlock>
+                    </StackPanel>
                 </Grid>
 
             </TabItem>
@@ -57,9 +101,49 @@
                 </TabItem.Header>
                 <Grid>
                     <Grid.RowDefinitions>
-                        <RowDefinition Height="40*"/>
+                        <RowDefinition Height="50*"/>
                         <RowDefinition Height="510*"/>
+                        <RowDefinition Height="30*"/>
                     </Grid.RowDefinitions>
+                    <StackPanel Orientation="Horizontal" Grid.Row="0">
+                        <TextBox Margin="20 0 0 0" Width="200" Height="25" x:Name="AccessoriesSearchTb" TextChanged="AccessoriesSearchTb_TextChanged">
+                            <TextBox.Style>
+                                <Style TargetType="TextBox" xmlns:sys="clr-namespace:System;assembly=mscorlib">
+                                    <Style.Resources>
+                                        <VisualBrush x:Key="CueBannerBrush" AlignmentX="Left" AlignmentY="Center" Stretch="None">
+                                            <VisualBrush.Visual>
+                                                <Label Content="Поиск" Foreground="#FF909090" FontWeight="DemiBold" />
+                                            </VisualBrush.Visual>
+                                        </VisualBrush>
+                                    </Style.Resources>
+                                    <Style.Triggers>
+                                        <Trigger Property="Text" Value="{x:Static sys:String.Empty}">
+                                            <Setter Property="Background" Value="{StaticResource CueBannerBrush}" />
+                                        </Trigger>
+                                        <Trigger Property="Text" Value="{x:Null}">
+                                            <Setter Property="Background" Value="{StaticResource CueBannerBrush}" />
+                                        </Trigger>
+                                        <Trigger Property="IsKeyboardFocused" Value="True">
+                                            <Setter Property="Background" Value="White" />
+                                        </Trigger>
+                                    </Style.Triggers>
+                                </Style>
+                            </TextBox.Style>
+                        </TextBox>
+                        <TextBlock Margin="40 0 0 0" VerticalAlignment="Center">Сортировать</TextBlock>
+                        <ComboBox x:Name="AccessoriesSortCb" Height="25" Width="200" Margin="15 0" SelectionChanged="AccessoriesSortCb_SelectionChanged">
+                            <ComboBoxItem>Нет</ComboBoxItem>
+                            <ComboBoxItem>По Артиклу</ComboBoxItem>
+                            <ComboBoxItem>По наименованию в алфавитном</ComboBoxItem>
+                            <ComboBoxItem>По наименованию против алфавитного</ComboBoxItem>
+                            <ComboBoxItem>По количеству в порядке возрастания</ComboBoxItem>
+                            <ComboBoxItem>По количеству в порядке убывания</ComboBoxItem>
+                            <ComboBoxItem>По поставщику</ComboBoxItem>
+                        </ComboBox>
+                        <TextBlock Margin="30 0 0 0" VerticalAlignment="Center">Склад</TextBlock>
+                        <ComboBox x:Name="AccessoriesFilterCb" Height="25" DisplayMemberPath="Name" Width="200" Margin="15 0" SelectionChanged="AccessoriesFilterCb_SelectionChanged"></ComboBox>
+                        <Button x:Name="AddAccessoriesBtn" Style="{StaticResource StilyzedButton}" Margin="10 0 0 0" Width="100" Click="AddAccessoriesBtn_Click">Добавить</Button>
+                    </StackPanel>
                     <ListView x:Name="ComponentsListView" Grid.Row="1">
                         <ListView.View>
                             <GridView>
@@ -70,23 +154,28 @@
                                 <GridViewColumn Header="Закуп. цена" Width="100" DisplayMemberBinding="{Binding PriceOneKg}"/>
                                 <GridViewColumn Header="Поставщик" Width="150" DisplayMemberBinding="{Binding SupplierName}"/>
                                 <GridViewColumn Header="Срок доставки" Width="100" DisplayMemberBinding="{Binding Supplier.DeliveryTime}"/>
-                                <GridViewColumn Header="Edit" Width="100">
+                                <GridViewColumn Header="Edit" Width="85">
                                     <GridViewColumn.CellTemplate>
                                         <DataTemplate>
-                                            <Image x:Name="EditAccessories" Style="{StaticResource InteractionImage}" Source="{StaticResource edit_3_svgrepo_comDrawingImage}" Width="95" Height="30" MouseDown="EditAccessories_MouseDown" ></Image>
+                                            <Image x:Name="EditAccessories" Visibility="{Binding canEdit}" Style="{StaticResource InteractionImage}" Source="{StaticResource edit_3_svgrepo_comDrawingImage}" Width="95" Height="30" MouseDown="EditAccessories_MouseDown" ></Image>
                                         </DataTemplate>
                                     </GridViewColumn.CellTemplate>
                                 </GridViewColumn>
-                                <GridViewColumn Header="Delete" Width="100">
+                                <GridViewColumn Header="Delete" Width="85">
                                     <GridViewColumn.CellTemplate>
                                         <DataTemplate>
-                                            <Image x:Name="DeleteAccessories" Style="{StaticResource InteractionImage}" Source="{StaticResource delete_1_svgrepo_comDrawingImage}" Width="95" Height="30" MouseDown="DeleteAccessories_MouseDown"></Image>
+                                            <Image x:Name="DeleteAccessories" Visibility="{Binding canEdit}" Style="{StaticResource InteractionImage}" Source="{StaticResource delete_1_svgrepo_comDrawingImage}" Width="95" Height="30" MouseDown="DeleteAccessories_MouseDown"></Image>
                                         </DataTemplate>
                                     </GridViewColumn.CellTemplate>
                                 </GridViewColumn>
                             </GridView>
                         </ListView.View>
                     </ListView>
+                    <StackPanel Grid.Row="2" VerticalAlignment="Center" HorizontalAlignment="Center" Orientation="Horizontal">
+                        <TextBlock x:Name="AccessoriesCountTb" FontWeight="Bold">16 из 100</TextBlock>
+                        <TextBlock FontWeight="Bold" Margin="40 0 0 0">общая закупочная стоимость:</TextBlock>
+                        <TextBlock x:Name="AccessoriesPriceTb" FontWeight="Bold" Margin="10 0 0 0">10000 руб.</TextBlock>
+                    </StackPanel>
                 </Grid>
             </TabItem>
         </TabControl>

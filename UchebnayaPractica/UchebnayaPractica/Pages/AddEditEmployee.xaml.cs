@@ -1,9 +1,11 @@
-﻿using System.Collections;
+﻿using System.Windows;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text.RegularExpressions;
 using System.Windows.Controls;
 using UchebnayaPractica.Database;
+using Microsoft.Win32;
+using System.IO;
 
 namespace UchebnayaPractica.Pages
 {
@@ -13,15 +15,40 @@ namespace UchebnayaPractica.Pages
     public partial class AddEditEmployee : Page
     {
         User user;
+        UserImage userImage;
         bool isNew;
         string oldLogin;
         List<Operation> operations;
         public AddEditEmployee(User user,bool isNew, string title = "Добавить сотрудника")
         {
             InitializeComponent();
+
+            if (!App.mainWindow.MainFrame.CanGoBack)
+                Back.Visibility = Visibility.Collapsed;
+
+            if(App.currentUser.RoleId == 1 || App.currentUser.RoleId == 2 || App.currentUser.RoleId == 5)
+            {
+                MainPanel.IsEnabled = false;
+                SaveBtn.Visibility = Visibility.Collapsed;
+                AddBtn.Visibility = Visibility.Collapsed;
+                RoleCb.ItemsSource = App.db.Role.Where(x => x.Id != 4).ToList();
+            }
+            else if (App.currentUser.RoleId == 4)
+            {
+                PhotoPanel.Visibility = Visibility.Visible;
+                PostPanel.Visibility = Visibility.Collapsed;
+                EducationPanel.Visibility = Visibility.Collapsed;
+                OperationPanel.Visibility = Visibility.Collapsed;
+                RoleCb.ItemsSource = App.db.Role.ToList();
+                RoleCb.IsEnabled = false;
+                if (user.IdUserImage != null)
+                    MainImage.Source = Methods.GetBitmapImageFromBytes(user.UserImage.Photo);
+            }
+            else
+                RoleCb.ItemsSource = App.db.Role.Where(x => x.Id != 4).ToList();
+
             TitleTb.Text = title;
             oldLogin = user.Login;
-            RoleCb.ItemsSource = App.db.Role.Where(x => x.Id != 4).ToList();
             RoleCb.SelectedItem = user.Role;
             this.user = user;
             this.isNew = isNew;
@@ -44,8 +71,11 @@ namespace UchebnayaPractica.Pages
 
         private void Back_MouseDown(object sender, System.Windows.Input.MouseButtonEventArgs e)
         {
-            if(NavigationService.CanGoBack)
+            if (NavigationService.CanGoBack)
+            {
                 NavigationService.GoBack();
+                App.employeePage = null;
+            }
         }
 
         private void OperationTb_TextChanged(object sender, TextChangedEventArgs e)
@@ -63,8 +93,6 @@ namespace UchebnayaPractica.Pages
             if (PasswordTb.Text == "" && mistake == "")
                 mistake = "Вы не заполнили пароль!";
             mistake = ValidatePassword(PasswordTb.Text);
-            if (PasswordTb.Text == "" && mistake == "")
-                mistake = "Вы не заполнили логин!";
             if (App.db.User.Any(x => x.Login == LoginTb.Text) && (oldLogin != LoginTb.Text || isNew) && mistake == "")
                 mistake = "Такой логин уже есть!";
             if (RoleCb.SelectedIndex == -1 && mistake == "")
@@ -81,6 +109,11 @@ namespace UchebnayaPractica.Pages
                 Methods.TakeWarning(mistake);
                 return;
             }
+            if (userImage != null && userImage.Id == 0)
+            {
+                userImage = App.db.UserImage.Add(userImage);
+                user.IdUserImage = userImage.Id;
+            }
 
             user.RoleId = (RoleCb.SelectedItem as Role).Id;
             if (isNew)
@@ -96,7 +129,13 @@ namespace UchebnayaPractica.Pages
             }
 
             App.db.SaveChanges();
-            NavigationService.GoBack();
+            if (NavigationService.CanGoBack)
+            {
+                NavigationService.GoBack();
+                if(App.employeePage != null)
+                    App.employeePage.Refresh();
+                App.employeePage = null;
+            }
             Methods.TakeInformation("Изменения успешно сохранены!");
         }
         private string ValidatePassword(string password)
@@ -123,6 +162,48 @@ namespace UchebnayaPractica.Pages
             if(operation.Id != 0)
                 App.db.Operation.Remove(operation);
             Refresh();
+        }
+
+        private void LoadBtn_Click(object sender, RoutedEventArgs e)
+        {
+            var opn = new OpenFileDialog();
+            opn.Title = "Выберите изображение";
+            opn.Filter = "Image Files|*.bmp;*.jpg;*.jpeg;*.png;*.gif;*.tif;*.tiff|All Files|*.*";
+            if (opn.ShowDialog() == true)
+            {
+                byte[] bytes = File.ReadAllBytes(opn.FileName);
+                UserImage image = App.db.UserImage.FirstOrDefault(x => x.Photo == bytes);
+                if (image != null)
+                {
+                    user.IdUserImage = image.Id;
+                    userImage = image;
+                }
+                else
+                    userImage = new UserImage() { Photo = bytes };
+
+                MainImage.Source = Methods.GetBitmapImageFromBytes(bytes);
+            }
+        }
+
+        private void DeleteImage_MouseDown(object sender, System.Windows.Input.MouseButtonEventArgs e)
+        {
+            MainImage.Source = null;
+            user.IdUserImage = null;
+
+            if (userImage.Id == 0)
+                userImage = null;
+            else
+            {
+                if (isNew && userImage.User.Count() > 0)
+                    user.IdUserImage = null;
+                else if (!isNew && userImage.User.Count() > 1)
+                    user.IdUserImage = null;
+                else if (!isNew && userImage.User.Count() == 1)
+                {
+                    user.IdUserImage = null;
+                    App.db.UserImage.Remove(userImage);
+                }
+            }
         }
     }
 }

@@ -99,6 +99,8 @@
       <DependentUpon>App.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
+    <Compile Include="Components\Accessories.cs" />
+    <Compile Include="Components\Material.cs" />
     <Compile Include="Components\User.cs" />
     <Compile Include="Database\Accessories.cs">
       <DependentUpon>Model1.tt</DependentUpon>
@@ -160,6 +162,9 @@
     <Compile Include="Database\Size.cs">
       <DependentUpon>Model1.tt</DependentUpon>
     </Compile>
+    <Compile Include="Database\Sklad.cs">
+      <DependentUpon>Model1.tt</DependentUpon>
+    </Compile>
     <Compile Include="Database\Standart.cs">
       <DependentUpon>Model1.tt</DependentUpon>
     </Compile>
@@ -198,6 +203,14 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
+    <Page Include="Pages\AddEditAccessoriesPage.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Pages\AddEditMaterialPage.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
     <Page Include="Pages\AddEditEmployee.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
@@ -223,6 +236,12 @@
     <Compile Include="Methods.cs" />
     <Compile Include="Pages\AccessoriesAndMaterialsPage.xaml.cs">
       <DependentUpon>AccessoriesAndMaterialsPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\AddEditAccessoriesPage.xaml.cs">
+      <DependentUpon>AddEditAccessoriesPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\AddEditMaterialPage.xaml.cs">
+      <DependentUpon>AddEditMaterialPage.xaml</DependentUpon>
     </Compile>
     <Compile Include="Pages\AddEditEmployee.xaml.cs">
       <DependentUpon>AddEditEmployee.xaml</DependentUpon>

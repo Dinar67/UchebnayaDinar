@@ -13,6 +13,7 @@
     <Property Name="IdTypeAccessories" Type="int" />
     <Property Name="Price" Type="decimal" Precision="10" Scale="2" />
     <Property Name="Weight" Type="decimal" Precision="10" Scale="4" />
+    <Property Name="IdSklad" Type="int" />
   </EntityType>
   <EntityType Name="AcessoriesImage">
     <Key>
@@ -53,6 +54,7 @@
     <Property Name="IdStandart" Type="int" />
     <Property Name="WidthMetr" Type="decimal" Precision="10" Scale="2" />
     <Property Name="MassOneMetr" Type="decimal" Precision="12" Scale="5" />
+    <Property Name="IdSklad" Type="int" />
   </EntityType>
   <EntityType Name="MaterialImage">
     <Key>
@@ -144,6 +146,13 @@
     <Property Name="SizeValue" Type="decimal" Precision="10" Scale="2" />
     <Property Name="IdUnit" Type="int" />
     <Property Name="IdProduct" Type="int" />
+  </EntityType>
+  <EntityType Name="Sklad">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Name" Type="nvarchar(max)" />
   </EntityType>
   <EntityType Name="Standart">
     <Key>
@@ -241,6 +250,18 @@
       </Dependent>
     </ReferentialConstraint>
   </Association>
+  <Association Name="FK_Accessories_Sklad">
+    <End Role="Sklad" Type="Self.Sklad" Multiplicity="0..1" />
+    <End Role="Accessories" Type="Self.Accessories" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Sklad">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="Accessories">
+        <PropertyRef Name="IdSklad" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
   <Association Name="FK_Accessories_Supplier1">
     <End Role="Supplier" Type="Self.Supplier" Multiplicity="1" />
     <End Role="Accessories" Type="Self.Accessories" Multiplicity="*" />
@@ -313,6 +334,18 @@
       </Dependent>
     </ReferentialConstraint>
   </Association>
+  <Association Name="FK_Material_Sklad">
+    <End Role="Sklad" Type="Self.Sklad" Multiplicity="0..1" />
+    <End Role="Material" Type="Self.Material" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Sklad">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="Material">
+        <PropertyRef Name="IdSklad" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
   <Association Name="FK_Material_Standart">
     <End Role="Standart" Type="Self.Standart" Multiplicity="0..1" />
     <End Role="Material" Type="Self.Material" Multiplicity="*" />
@@ -322,6 +355,18 @@
       </Principal>
       <Dependent Role="Material">
         <PropertyRef Name="IdStandart" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Material_Supplier">
+    <End Role="Supplier" Type="Self.Supplier" Multiplicity="1" />
+    <End Role="Material" Type="Self.Material" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Supplier">
+        <PropertyRef Name="SupplierName" />
+      </Principal>
+      <Dependent Role="Material">
+        <PropertyRef Name="SupplierName" />
       </Dependent>
     </ReferentialConstraint>
   </Association>
@@ -581,6 +626,7 @@
     <EntitySet Name="ProductMaterial" EntityType="Self.ProductMaterial" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="Role" EntityType="Self.Role" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="Size" EntityType="Self.Size" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Sklad" EntityType="Self.Sklad" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="Standart" EntityType="Self.Standart" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="Supplier" EntityType="Self.Supplier" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="sysdiagrams" EntityType="Self.sysdiagrams" Schema="dbo" store:Type="Tables" />
@@ -593,6 +639,10 @@
     <EntitySet Name="UserOperation" EntityType="Self.UserOperation" Schema="dbo" store:Type="Tables" />
     <AssociationSet Name="FK_Accessories_AcessoriesImage" Association="Self.FK_Accessories_AcessoriesImage">
       <End Role="AcessoriesImage" EntitySet="AcessoriesImage" />
+      <End Role="Accessories" EntitySet="Accessories" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Accessories_Sklad" Association="Self.FK_Accessories_Sklad">
+      <End Role="Sklad" EntitySet="Sklad" />
       <End Role="Accessories" EntitySet="Accessories" />
     </AssociationSet>
     <AssociationSet Name="FK_Accessories_Supplier1" Association="Self.FK_Accessories_Supplier1">
@@ -619,8 +669,16 @@
       <End Role="MaterialImage" EntitySet="MaterialImage" />
       <End Role="Material" EntitySet="Material" />
     </AssociationSet>
+    <AssociationSet Name="FK_Material_Sklad" Association="Self.FK_Material_Sklad">
+      <End Role="Sklad" EntitySet="Sklad" />
+      <End Role="Material" EntitySet="Material" />
+    </AssociationSet>
     <AssociationSet Name="FK_Material_Standart" Association="Self.FK_Material_Standart">
       <End Role="Standart" EntitySet="Standart" />
+      <End Role="Material" EntitySet="Material" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Material_Supplier" Association="Self.FK_Material_Supplier">
+      <End Role="Supplier" EntitySet="Supplier" />
       <End Role="Material" EntitySet="Material" />
     </AssociationSet>
     <AssociationSet Name="FK_Material_TypeMaterial" Association="Self.FK_Material_TypeMaterial">

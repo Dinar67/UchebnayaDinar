@@ -1,87 +1,12 @@
 {
   "Version": 1,
   "WorkspaceRootPath": "C:\\Users\\user\\source\\repos\\UchebnayaDinar\\UchebnayaPractica\\",
-  "Documents": [
-    {
-      "AbsoluteMoniker": "D:0:0:{08A8F211-B9E6-46F2-940B-9113193F2232}|UchebnayaPractica\\UchebnayaPractica.csproj|c:\\users\\user\\source\\repos\\uchebnayadinar\\uchebnayapractica\\uchebnayapractica\\pages\\addeditemployee.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{08A8F211-B9E6-46F2-940B-9113193F2232}|UchebnayaPractica\\UchebnayaPractica.csproj|solutionrelative:uchebnayapractica\\pages\\addeditemployee.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{08A8F211-B9E6-46F2-940B-9113193F2232}|UchebnayaPractica\\UchebnayaPractica.csproj|c:\\users\\user\\source\\repos\\uchebnayadinar\\uchebnayapractica\\uchebnayapractica\\pages\\employeepage.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{08A8F211-B9E6-46F2-940B-9113193F2232}|UchebnayaPractica\\UchebnayaPractica.csproj|solutionrelative:uchebnayapractica\\pages\\employeepage.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{08A8F211-B9E6-46F2-940B-9113193F2232}|UchebnayaPractica\\UchebnayaPractica.csproj|c:\\users\\user\\source\\repos\\uchebnayadinar\\uchebnayapractica\\uchebnayapractica\\pages\\employeepage.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}",
-      "RelativeMoniker": "D:0:0:{08A8F211-B9E6-46F2-940B-9113193F2232}|UchebnayaPractica\\UchebnayaPractica.csproj|solutionrelative:uchebnayapractica\\pages\\employeepage.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{08A8F211-B9E6-46F2-940B-9113193F2232}|UchebnayaPractica\\UchebnayaPractica.csproj|c:\\users\\user\\source\\repos\\uchebnayadinar\\uchebnayapractica\\uchebnayapractica\\components\\user.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{08A8F211-B9E6-46F2-940B-9113193F2232}|UchebnayaPractica\\UchebnayaPractica.csproj|solutionrelative:uchebnayapractica\\components\\user.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    }
-  ],
+  "Documents": [],
   "DocumentGroupContainers": [
     {
       "Orientation": 0,
       "VerticalTabListWidth": 256,
-      "DocumentGroups": [
-        {
-          "DockedWidth": 200,
-          "SelectedChildIndex": 0,
-          "Children": [
-            {
-              "$type": "Document",
-              "DocumentIndex": 0,
-              "Title": "AddEditEmployee.xaml.cs",
-              "DocumentMoniker": "C:\\Users\\user\\source\\repos\\UchebnayaDinar\\UchebnayaPractica\\UchebnayaPractica\\Pages\\AddEditEmployee.xaml.cs",
-              "RelativeDocumentMoniker": "UchebnayaPractica\\Pages\\AddEditEmployee.xaml.cs",
-              "ToolTip": "C:\\Users\\user\\source\\repos\\UchebnayaDinar\\UchebnayaPractica\\UchebnayaPractica\\Pages\\AddEditEmployee.xaml.cs",
-              "RelativeToolTip": "UchebnayaPractica\\Pages\\AddEditEmployee.xaml.cs",
-              "ViewState": "AgIAAB8AAAAAAAAAAAAQwEAAAAA2AAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-10-19T19:11:50.958Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 3,
-              "Title": "User.cs",
-              "DocumentMoniker": "C:\\Users\\user\\source\\repos\\UchebnayaDinar\\UchebnayaPractica\\UchebnayaPractica\\Components\\User.cs",
-              "RelativeDocumentMoniker": "UchebnayaPractica\\Components\\User.cs",
-              "ToolTip": "C:\\Users\\user\\source\\repos\\UchebnayaDinar\\UchebnayaPractica\\UchebnayaPractica\\Components\\User.cs",
-              "RelativeToolTip": "UchebnayaPractica\\Components\\User.cs",
-              "ViewState": "AgIAAAoAAAAAAAAAAAAQwBMAAABJAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-10-19T18:42:04.479Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 2,
-              "Title": "EmployeePage.xaml",
-              "DocumentMoniker": "C:\\Users\\user\\source\\repos\\UchebnayaDinar\\UchebnayaPractica\\UchebnayaPractica\\Pages\\EmployeePage.xaml",
-              "RelativeDocumentMoniker": "UchebnayaPractica\\Pages\\EmployeePage.xaml",
-              "ToolTip": "C:\\Users\\user\\source\\repos\\UchebnayaDinar\\UchebnayaPractica\\UchebnayaPractica\\Pages\\EmployeePage.xaml",
-              "RelativeToolTip": "UchebnayaPractica\\Pages\\EmployeePage.xaml",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003549|",
-              "WhenOpened": "2024-10-19T18:39:39.703Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 1,
-              "Title": "Pages\\EmployeePage.xaml.cs",
-              "DocumentMoniker": "C:\\Users\\user\\source\\repos\\UchebnayaDinar\\UchebnayaPractica\\UchebnayaPractica\\Pages\\EmployeePage.xaml.cs",
-              "RelativeDocumentMoniker": "UchebnayaPractica\\Pages\\EmployeePage.xaml.cs",
-              "ToolTip": "C:\\Users\\user\\source\\repos\\UchebnayaDinar\\UchebnayaPractica\\UchebnayaPractica\\Pages\\EmployeePage.xaml.cs",
-              "RelativeToolTip": "UchebnayaPractica\\Pages\\EmployeePage.xaml.cs",
-              "ViewState": "AgIAACIAAAAAAAAAAAAQwBIAAAAlAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-10-19T17:32:09.81Z",
-              "EditorCaption": ""
-            }
-          ]
-        }
-      ]
+      "DocumentGroups": []
     }
   ]
 }

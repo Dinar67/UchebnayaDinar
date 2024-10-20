@@ -18,6 +18,7 @@ namespace UchebnayaPractica.Database
         public Supplier()
         {
             this.Accessories = new HashSet<Accessories>();
+            this.Material = new HashSet<Material>();
         }
     
         public string SupplierName { get; set; }
@@ -26,5 +27,7 @@ namespace UchebnayaPractica.Database
     
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<Accessories> Accessories { get; set; }
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public virtual ICollection<Material> Material { get; set; }
     }
 }

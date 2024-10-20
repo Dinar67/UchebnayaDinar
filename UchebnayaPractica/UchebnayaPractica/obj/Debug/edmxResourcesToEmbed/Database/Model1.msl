@@ -1,21 +1,6 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
   <EntityContainerMapping StorageEntityContainer="Хранилище UchebkaModelContainer" CdmEntityContainer="UchebkaEntities">
-    <EntitySetMapping Name="Accessories">
-      <EntityTypeMapping TypeName="UchebkaModel.Accessories">
-        <MappingFragment StoreEntitySet="Accessories">
-          <ScalarProperty Name="Weight" ColumnName="Weight" />
-          <ScalarProperty Name="Price" ColumnName="Price" />
-          <ScalarProperty Name="IdTypeAccessories" ColumnName="IdTypeAccessories" />
-          <ScalarProperty Name="IdAcessoriesImage" ColumnName="IdAcessoriesImage" />
-          <ScalarProperty Name="SupplierName" ColumnName="SupplierName" />
-          <ScalarProperty Name="Count" ColumnName="Count" />
-          <ScalarProperty Name="IdUnit" ColumnName="IdUnit" />
-          <ScalarProperty Name="Name" ColumnName="Name" />
-          <ScalarProperty Name="Article" ColumnName="Article" />
-        </MappingFragment>
-      </EntityTypeMapping>
-    </EntitySetMapping>
     <EntitySetMapping Name="AcessoriesImage">
       <EntityTypeMapping TypeName="UchebkaModel.AcessoriesImage">
         <MappingFragment StoreEntitySet="AcessoriesImage">
@@ -40,23 +25,6 @@
           <ScalarProperty Name="Characteristic" ColumnName="Characteristic" />
           <ScalarProperty Name="IdTypeEquipment" ColumnName="IdTypeEquipment" />
           <ScalarProperty Name="Model" ColumnName="Model" />
-        </MappingFragment>
-      </EntityTypeMapping>
-    </EntitySetMapping>
-    <EntitySetMapping Name="Material">
-      <EntityTypeMapping TypeName="UchebkaModel.Material">
-        <MappingFragment StoreEntitySet="Material">
-          <ScalarProperty Name="MassOneMetr" ColumnName="MassOneMetr" />
-          <ScalarProperty Name="WidthMetr" ColumnName="WidthMetr" />
-          <ScalarProperty Name="IdStandart" ColumnName="IdStandart" />
-          <ScalarProperty Name="PriceOneKg" ColumnName="PriceOneKg" />
-          <ScalarProperty Name="IdTypeMaterial" ColumnName="IdTypeMaterial" />
-          <ScalarProperty Name="IdMaterialImage" ColumnName="IdMaterialImage" />
-          <ScalarProperty Name="SupplierName" ColumnName="SupplierName" />
-          <ScalarProperty Name="Count" ColumnName="Count" />
-          <ScalarProperty Name="IdUnit" ColumnName="IdUnit" />
-          <ScalarProperty Name="Name" ColumnName="Name" />
-          <ScalarProperty Name="Article" ColumnName="Article" />
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>
@@ -157,15 +125,6 @@
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>
-    <EntitySetMapping Name="Supplier">
-      <EntityTypeMapping TypeName="UchebkaModel.Supplier">
-        <MappingFragment StoreEntitySet="Supplier">
-          <ScalarProperty Name="DeliveryTime" ColumnName="DeliveryTime" />
-          <ScalarProperty Name="Address" ColumnName="Address" />
-          <ScalarProperty Name="SupplierName" ColumnName="SupplierName" />
-        </MappingFragment>
-      </EntityTypeMapping>
-    </EntitySetMapping>
     <EntitySetMapping Name="sysdiagrams">
       <EntityTypeMapping TypeName="UchebkaModel.sysdiagrams">
         <MappingFragment StoreEntitySet="sysdiagrams">
@@ -249,6 +208,57 @@
           <ScalarProperty Name="Login" ColumnName="Login" />
           <ScalarProperty Name="IdOperation" ColumnName="IdOperation" />
           <ScalarProperty Name="Id" ColumnName="Id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Accessories">
+      <EntityTypeMapping TypeName="UchebkaModel.Accessories">
+        <MappingFragment StoreEntitySet="Accessories">
+          <ScalarProperty Name="IdSklad" ColumnName="IdSklad" />
+          <ScalarProperty Name="Weight" ColumnName="Weight" />
+          <ScalarProperty Name="Price" ColumnName="Price" />
+          <ScalarProperty Name="IdTypeAccessories" ColumnName="IdTypeAccessories" />
+          <ScalarProperty Name="IdAcessoriesImage" ColumnName="IdAcessoriesImage" />
+          <ScalarProperty Name="SupplierName" ColumnName="SupplierName" />
+          <ScalarProperty Name="Count" ColumnName="Count" />
+          <ScalarProperty Name="IdUnit" ColumnName="IdUnit" />
+          <ScalarProperty Name="Name" ColumnName="Name" />
+          <ScalarProperty Name="Article" ColumnName="Article" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Material">
+      <EntityTypeMapping TypeName="UchebkaModel.Material">
+        <MappingFragment StoreEntitySet="Material">
+          <ScalarProperty Name="IdSklad" ColumnName="IdSklad" />
+          <ScalarProperty Name="MassOneMetr" ColumnName="MassOneMetr" />
+          <ScalarProperty Name="WidthMetr" ColumnName="WidthMetr" />
+          <ScalarProperty Name="IdStandart" ColumnName="IdStandart" />
+          <ScalarProperty Name="PriceOneKg" ColumnName="PriceOneKg" />
+          <ScalarProperty Name="IdTypeMaterial" ColumnName="IdTypeMaterial" />
+          <ScalarProperty Name="IdMaterialImage" ColumnName="IdMaterialImage" />
+          <ScalarProperty Name="SupplierName" ColumnName="SupplierName" />
+          <ScalarProperty Name="Count" ColumnName="Count" />
+          <ScalarProperty Name="IdUnit" ColumnName="IdUnit" />
+          <ScalarProperty Name="Name" ColumnName="Name" />
+          <ScalarProperty Name="Article" ColumnName="Article" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Sklad">
+      <EntityTypeMapping TypeName="UchebkaModel.Sklad">
+        <MappingFragment StoreEntitySet="Sklad">
+          <ScalarProperty Name="Name" ColumnName="Name" />
+          <ScalarProperty Name="Id" ColumnName="Id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Supplier">
+      <EntityTypeMapping TypeName="UchebkaModel.Supplier">
+        <MappingFragment StoreEntitySet="Supplier">
+          <ScalarProperty Name="DeliveryTime" ColumnName="DeliveryTime" />
+          <ScalarProperty Name="Address" ColumnName="Address" />
+          <ScalarProperty Name="SupplierName" ColumnName="SupplierName" />
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>

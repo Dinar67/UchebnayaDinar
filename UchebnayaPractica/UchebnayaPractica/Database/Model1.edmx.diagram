@@ -5,11 +5,9 @@
     <!-- Diagram content (shape and connector positions) -->
     <edmx:Diagrams>
       <Diagram DiagramId="07141cdfcc8941cb961344b332156be5" Name="Diagram1">
-        <EntityTypeShape EntityType="UchebkaModel.Accessories" Width="1.5" PointX="0.75" PointY="2" />
         <EntityTypeShape EntityType="UchebkaModel.AcessoriesImage" Width="1.5" PointX="1.5" PointY="18.75" />
         <EntityTypeShape EntityType="UchebkaModel.Document" Width="1.5" PointX="5.25" PointY="15.75" />
         <EntityTypeShape EntityType="UchebkaModel.Equipment" Width="1.5" PointX="6" PointY="2.875" />
-        <EntityTypeShape EntityType="UchebkaModel.Material" Width="1.5" PointX="3.75" PointY="34.75" />
         <EntityTypeShape EntityType="UchebkaModel.MaterialImage" Width="1.5" PointX="1.5" PointY="33.625" />
         <EntityTypeShape EntityType="UchebkaModel.OperationSpecification" Width="1.5" PointX="6" PointY="6.625" />
         <EntityTypeShape EntityType="UchebkaModel.Order" Width="1.5" PointX="3" PointY="9.125" />
@@ -20,7 +18,6 @@
         <EntityTypeShape EntityType="UchebkaModel.Role" Width="1.5" PointX="1.5" PointY="28.875" />
         <EntityTypeShape EntityType="UchebkaModel.Size" Width="1.5" PointX="6" PointY="12.625" />
         <EntityTypeShape EntityType="UchebkaModel.Standart" Width="1.5" PointX="1.5" PointY="36" />
-        <EntityTypeShape EntityType="UchebkaModel.Supplier" Width="1.5" PointX="1.5" PointY="16.25" />
         <EntityTypeShape EntityType="UchebkaModel.sysdiagrams" Width="1.5" PointX="8.75" PointY="0.75" />
         <EntityTypeShape EntityType="UchebkaModel.TypeAccessories" Width="1.5" PointX="1.5" PointY="21.125" />
         <EntityTypeShape EntityType="UchebkaModel.TypeEquipment" Width="1.5" PointX="3.75" PointY="2.875" />
@@ -28,18 +25,8 @@
         <EntityTypeShape EntityType="UchebkaModel.Unit" Width="1.5" PointX="1.5" PointY="13.5" />
         <EntityTypeShape EntityType="UchebkaModel.User" Width="1.5" PointX="0.75" PointY="23.75" />
         <EntityTypeShape EntityType="UchebkaModel.UserImage" Width="1.5" PointX="1.5" PointY="31.125" />
-        <AssociationConnector Association="UchebkaModel.FK_Accessories_AcessoriesImage" />
-        <AssociationConnector Association="UchebkaModel.FK_Accessories_Supplier1" />
-        <AssociationConnector Association="UchebkaModel.FK_Accessories_TypeAccessories" />
-        <AssociationConnector Association="UchebkaModel.FK_Accessories_Unit" />
-        <AssociationConnector Association="UchebkaModel.FK_ProductAccessories_Accessories" />
         <AssociationConnector Association="UchebkaModel.FK_Document_Order" />
         <AssociationConnector Association="UchebkaModel.FK_Equipment_TypeEquipment" />
-        <AssociationConnector Association="UchebkaModel.FK_Material_MaterialImage" />
-        <AssociationConnector Association="UchebkaModel.FK_Material_Standart" />
-        <AssociationConnector Association="UchebkaModel.FK_Material_TypeMaterial" />
-        <AssociationConnector Association="UchebkaModel.FK_Material_Unit" />
-        <AssociationConnector Association="UchebkaModel.FK_ProductMaterial_Material" />
         <AssociationConnector Association="UchebkaModel.FK_OperationSpecification_Product" />
         <AssociationConnector Association="UchebkaModel.FK_OperationSpecification_TypeEquipment" />
         <AssociationConnector Association="UchebkaModel.FK_Order_Product" />
@@ -58,6 +45,23 @@
         <AssociationConnector Association="UchebkaModel.FK_Operation_User" />
         <AssociationConnector Association="UchebkaModel.FK_UserOperation_Operation" />
         <AssociationConnector Association="UchebkaModel.FK_UserOperation_User" />
+        <EntityTypeShape EntityType="UchebkaModel.Accessories" Width="1.5" PointX="3.75" PointY="19.125" />
+        <EntityTypeShape EntityType="UchebkaModel.Material" Width="1.5" PointX="5.75" PointY="25.5" />
+        <EntityTypeShape EntityType="UchebkaModel.Sklad" Width="1.5" PointX="1.5" PointY="2.25" />
+        <AssociationConnector Association="UchebkaModel.FK_Accessories_AcessoriesImage" />
+        <AssociationConnector Association="UchebkaModel.FK_Accessories_Sklad" />
+        <AssociationConnector Association="UchebkaModel.FK_Accessories_TypeAccessories" />
+        <AssociationConnector Association="UchebkaModel.FK_Accessories_Unit" />
+        <AssociationConnector Association="UchebkaModel.FK_ProductAccessories_Accessories" />
+        <AssociationConnector Association="UchebkaModel.FK_Material_MaterialImage" />
+        <AssociationConnector Association="UchebkaModel.FK_Material_Sklad" />
+        <AssociationConnector Association="UchebkaModel.FK_Material_Standart" />
+        <AssociationConnector Association="UchebkaModel.FK_Material_TypeMaterial" />
+        <AssociationConnector Association="UchebkaModel.FK_Material_Unit" />
+        <AssociationConnector Association="UchebkaModel.FK_ProductMaterial_Material" />
+        <EntityTypeShape EntityType="UchebkaModel.Supplier" Width="1.5" PointX="8.375" PointY="3.875" />
+        <AssociationConnector Association="UchebkaModel.FK_Accessories_Supplier1" />
+        <AssociationConnector Association="UchebkaModel.FK_Material_Supplier" />
       </Diagram>
     </edmx:Diagrams>
   </edmx:Designer>

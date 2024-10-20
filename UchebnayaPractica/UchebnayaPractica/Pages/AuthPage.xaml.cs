@@ -30,13 +30,27 @@ namespace UchebnayaPractica.Pages
                 if(RememberCb.IsChecked == true)
                     File.WriteAllText(@"RememberMe.txt", user.Login);
                 App.currentUser = user;
-                NavigationService.Navigate(new EmployeePage());
+
+                if (user.RoleId == 3)
+                {
+                    App.mainWindow.SetIcons(true, true, true, true);
+                    NavigationService.Navigate(new EmployeePage());
+                }
+                else if (user.RoleId == 4)
+                {
+                    App.mainWindow.SetIcons(false, false, true, true);
+                    NavigationService.Navigate(new MainPage());
+                }
+                else
+                {
+                    App.mainWindow.SetIcons(false, true, true, true);
+                    NavigationService.Navigate(new AccessoriesAndMaterialsPage());
+                }
+                
                 Methods.TakeInformation("Вы успешно зашли в систему!");
-                App.mainWindow.Exit.Visibility = Visibility.Visible;
-                App.mainWindow.Person.Visibility = Visibility.Visible;
             }
             else
-                Methods.TakeInformation("Неверный логин или пароль!");
+                Methods.TakeWarning("Неверный логин или пароль!");
         }
     }
 }
