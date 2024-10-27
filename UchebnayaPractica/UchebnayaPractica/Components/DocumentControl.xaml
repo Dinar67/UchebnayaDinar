@@ -1,0 +1,19 @@
+﻿<UserControl x:Class="UchebnayaPractica.Components.DocumentControl"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:UchebnayaPractica.Components"
+             mc:Ignorable="d" 
+             MinHeight="30" MaxHeight="60" d:DesignWidth="370" MinWidth="370">
+    <Grid>
+        <StackPanel Orientation="Horizontal" Margin="10 5" VerticalAlignment="Center">
+            <TextBlock MaxWidth="250" MaxHeight="45" TextWrapping="Wrap" Text="{Binding Name}"></TextBlock>
+            <TextBlock Text="{Binding Format}"></TextBlock>
+        </StackPanel>
+        <StackPanel Orientation="Horizontal" HorizontalAlignment="Right" VerticalAlignment="Center">
+            <Image x:Name="Save" Style="{StaticResource InteractionImage}" Source="{StaticResource save_svgrepo_comDrawingImage}" Height="20" Width="20"  Margin="5 5 0 5" MouseDown="Save_MouseDown" />
+            <Image x:Name="Trash" Style="{StaticResource InteractionImage}" Source="{StaticResource delete_1_svgrepo_comDrawingImage}" Height="20" Width="20" Margin="10 0 10 0" MouseDown="Trash_MouseDown"  />
+        </StackPanel>
+    </Grid>
+</UserControl>

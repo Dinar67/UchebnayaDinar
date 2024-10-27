@@ -38,8 +38,8 @@ namespace UchebnayaPractica.Database
         public virtual Standart Standart { get; set; }
         public virtual TypeMaterial TypeMaterial { get; set; }
         public virtual Unit Unit { get; set; }
+        public virtual Supplier Supplier { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<ProductMaterial> ProductMaterial { get; set; }
-        public virtual Supplier Supplier { get; set; }
     }
 }

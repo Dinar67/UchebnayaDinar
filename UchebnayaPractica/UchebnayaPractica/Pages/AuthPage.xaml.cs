@@ -33,17 +33,17 @@ namespace UchebnayaPractica.Pages
 
                 if (user.RoleId == 3)
                 {
-                    App.mainWindow.SetIcons(true, true, true, true);
+                    App.mainWindow.SetIcons(true, true, true, true, true, true);
                     NavigationService.Navigate(new EmployeePage());
                 }
                 else if (user.RoleId == 4)
                 {
-                    App.mainWindow.SetIcons(false, false, true, true);
+                    App.mainWindow.SetIcons(false, false, true, true, false, true);
                     NavigationService.Navigate(new MainPage());
                 }
                 else
                 {
-                    App.mainWindow.SetIcons(false, true, true, true);
+                    App.mainWindow.SetIcons(false, true, true, true, false, true);
                     NavigationService.Navigate(new AccessoriesAndMaterialsPage());
                 }
                 

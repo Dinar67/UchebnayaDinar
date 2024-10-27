@@ -1,0 +1,102 @@
+﻿<Page x:Class="UchebnayaPractica.Pages.OrderPage"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:local="clr-namespace:UchebnayaPractica.Pages"
+      mc:Ignorable="d" 
+      d:DesignHeight="600" d:DesignWidth="1000"
+      Title="OrderPage">
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="53*"/>
+            <RowDefinition Height="533*"/>
+        </Grid.RowDefinitions>
+
+        <StackPanel Margin="20,0,0,0" HorizontalAlignment="Left" VerticalAlignment="Center" Orientation="Horizontal">
+            <TextBlock FontSize="18" Margin="0 0 15 0 ">Заказы</TextBlock>
+            <TextBox Width="180" Height="25" x:Name="SearchTb" TextChanged="SearchTb_TextChanged" >
+                <TextBox.Style>
+                    <Style TargetType="TextBox" xmlns:sys="clr-namespace:System;assembly=mscorlib">
+                        <Style.Resources>
+                            <VisualBrush x:Key="CueBannerBrush" AlignmentX="Left" AlignmentY="Center" Stretch="None">
+                                <VisualBrush.Visual>
+                                    <Label Content="Поиск" Foreground="#FF909090" FontWeight="DemiBold" />
+                                </VisualBrush.Visual>
+                            </VisualBrush>
+                        </Style.Resources>
+                        <Style.Triggers>
+                            <Trigger Property="Text" Value="{x:Static sys:String.Empty}">
+                                <Setter Property="Background" Value="{StaticResource CueBannerBrush}" />
+                            </Trigger>
+                            <Trigger Property="Text" Value="{x:Null}">
+                                <Setter Property="Background" Value="{StaticResource CueBannerBrush}" />
+                            </Trigger>
+                            <Trigger Property="IsKeyboardFocused" Value="True">
+                                <Setter Property="Background" Value="White" />
+                            </Trigger>
+                        </Style.Triggers>
+                    </Style>
+                </TextBox.Style>
+            </TextBox>
+            <TextBlock Margin="10 0 0 0" VerticalAlignment="Center">Сортировать</TextBlock>
+            <ComboBox x:Name="SortCb" Height="25" Width="180" Margin="10 0" SelectionChanged="SortCb_SelectionChanged">
+                <ComboBoxItem>Нет</ComboBoxItem>
+                <ComboBoxItem>По наименованию в алфавитном</ComboBoxItem>
+                <ComboBoxItem>По наименованию против алфавитного</ComboBoxItem>
+                <ComboBoxItem>По цене в порядке возрастания</ComboBoxItem>
+                <ComboBoxItem>По цене в порядке убывания</ComboBoxItem>
+                <ComboBoxItem>По заказчику</ComboBoxItem>
+            </ComboBox>
+
+            <TextBlock Margin="10 0 0 0" VerticalAlignment="Center">Фильтровать</TextBlock>
+            <ComboBox x:Name="FilterCb" Height="25" Width="180" Margin="10 0" SelectionChanged="FilterCb_SelectionChanged">
+                <ComboBoxItem>Нет</ComboBoxItem>
+                <ComboBoxItem ToolTip="статусы «Новый», «Составление спецификации» и «Подтверждение»">Новые заказы</ComboBoxItem>
+                <ComboBoxItem ToolTip="статусы «Готов» и «Закрыт»">Выполненные заказы</ComboBoxItem>
+                <ComboBoxItem ToolTip="статусы «Закупка», «Производство» и «Контроль»">Текущие заказы</ComboBoxItem>
+                <ComboBoxItem ToolTip="статус «Отклонен»">Отклоненные заказы</ComboBoxItem>
+            </ComboBox>
+        </StackPanel>
+
+        <ListView Grid.Row="1" x:Name="MyList" SelectionChanged="MyList_SelectionChanged">
+            <ListView.View>
+                <GridView>
+                    <GridViewColumn Header="№" Width="70" DisplayMemberBinding="{Binding OrderNumber}"></GridViewColumn>
+                    <GridViewColumn Header="Дата заказа" Width="80" DisplayMemberBinding="{Binding DateOrder}"></GridViewColumn>
+                    <GridViewColumn Header="Наименование" Width="150" DisplayMemberBinding="{Binding Name}"></GridViewColumn>
+                    <GridViewColumn Header="Статус" Width="80" DisplayMemberBinding="{Binding CurrentStatus.OrderStatus.Name}"></GridViewColumn>
+                    <GridViewColumn Header="Стоимость" Width="80" DisplayMemberBinding="{Binding Amount}"></GridViewColumn>
+                    <GridViewColumn Header="Заказчик" Width="150" DisplayMemberBinding="{Binding User.FIO}"></GridViewColumn>
+                    <GridViewColumn Header="Дата конца" Width="80" DisplayMemberBinding="{Binding DateEnd}"></GridViewColumn>
+                    <GridViewColumn Header="Менеджер" Width="150" DisplayMemberBinding="{Binding User1.FIO}"></GridViewColumn>
+                    <GridViewColumn Width="70" Header="Edit">
+                        <GridViewColumn.CellTemplate>
+                            <DataTemplate>
+                                <Image HorizontalAlignment="Center" x:Name="Edit" Width="40" Height="40" Source="{StaticResource edit_3_svgrepo_comDrawingImage}" Style="{StaticResource InteractionImage}" MouseDown="Edit_MouseDown"></Image>
+                            </DataTemplate>
+                        </GridViewColumn.CellTemplate>
+                    </GridViewColumn>
+                    <GridViewColumn Width="70" Header="Delete">
+                        <GridViewColumn.CellTemplate>
+                            <DataTemplate>
+                                <Image Visibility="{Binding CanDelete}" HorizontalAlignment="Center" x:Name="Delete" Width="40" Height="40" Source="{StaticResource delete_1_svgrepo_comDrawingImage}" Style="{StaticResource InteractionImage}" MouseDown="Delete_MouseDown"></Image>
+                            </DataTemplate>
+                        </GridViewColumn.CellTemplate>
+                    </GridViewColumn>
+                </GridView>
+            </ListView.View>
+        </ListView>
+
+        <StackPanel HorizontalAlignment="Right" Grid.Row="0" Orientation="Horizontal"  Width="100" Margin="0 0 40 0">
+            <Button x:Name="AddOrderBtn" Style="{StaticResource StilyzedButton}" Height="30" Width="100" Click="AddOrderBtn_Click">Добавить</Button>
+        </StackPanel>
+
+        <Button x:Name="StatusBtn" Style="{StaticResource StilyzedButton}" Margin="15" Grid.Row="1" HorizontalAlignment="Left" VerticalAlignment="Bottom" Width="120" Click="StatusBtn_Click">Изменить статус</Button>
+        <Button x:Name="HistoryBtn" Style="{StaticResource StilyzedButton}" Margin="15" Grid.Row="1" HorizontalAlignment="Right" VerticalAlignment="Bottom"  Click="HistoryBtn_Click">
+            <Button.Content>
+                <Image Source="{StaticResource history_svgrepo_comDrawingImage}"></Image>
+            </Button.Content>
+        </Button>
+    </Grid>
+</Page>

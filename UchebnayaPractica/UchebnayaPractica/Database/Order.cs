@@ -18,9 +18,10 @@ namespace UchebnayaPractica.Database
         public Order()
         {
             this.Document = new HashSet<Document>();
+            this.StatusOrder = new HashSet<StatusOrder>();
         }
     
-        public int Id { get; set; }
+        public string OrderNumber { get; set; }
         public System.DateTime DateOrder { get; set; }
         public string Name { get; set; }
         public Nullable<int> IdProduct { get; set; }
@@ -34,5 +35,7 @@ namespace UchebnayaPractica.Database
         public virtual Product Product { get; set; }
         public virtual User User { get; set; }
         public virtual User User1 { get; set; }
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public virtual ICollection<StatusOrder> StatusOrder { get; set; }
     }
 }

@@ -1,0 +1,35 @@
+﻿<Window x:Class="UchebnayaPractica.Windows.HistoryWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:UchebnayaPractica.Windows"
+        mc:Ignorable="d"
+        Height="550" Width="900" MinHeight="550" MinWidth="900" Icon="\Images\Logo_Color_Transparent.ico">
+    <Grid>
+        <StackPanel VerticalAlignment="Top" Margin="10">
+            <TextBlock FontWeight="Bold" FontSize="18" Margin="0 0 0 5">История изменений статусов заказов</TextBlock>
+            <ListView x:Name="MyList"  Height="480">
+                <ListView.View>
+                    <GridView>
+                        <GridView.Columns>
+                            <GridViewColumn Header="Id" Width="70" DisplayMemberBinding="{Binding Id}"></GridViewColumn>
+                            <GridViewColumn Header="Номер заказа" Width="150" DisplayMemberBinding="{Binding OrderNumber}"></GridViewColumn>
+                            <GridViewColumn Header="Новый статус" Width="120" DisplayMemberBinding="{Binding OrderStatus.Name}"></GridViewColumn>
+                            <GridViewColumn Header="Старый статус" Width="120" DisplayMemberBinding="{Binding OrderStatus1.Name}"></GridViewColumn>
+                            <GridViewColumn Header="Дата изменения" Width="110" DisplayMemberBinding="{Binding DateChange, StringFormat='dd.MM.yyyy'}"></GridViewColumn>
+                            <GridViewColumn Header="Время изменения" Width="120" DisplayMemberBinding="{Binding TimeChange,StringFormat=hh\\:mm}"></GridViewColumn>
+                            <GridViewColumn Header="Описание" Width="160">
+                                <GridViewColumn.CellTemplate>
+                                    <DataTemplate>
+                                        <TextBlock Text="{Binding Description}" TextWrapping="Wrap" MaxWidth="150"></TextBlock>
+                                    </DataTemplate>
+                                </GridViewColumn.CellTemplate>
+                            </GridViewColumn>
+                        </GridView.Columns>
+                    </GridView>
+                </ListView.View>
+            </ListView>
+        </StackPanel>
+    </Grid>
+</Window>

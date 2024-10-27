@@ -1,0 +1,63 @@
+﻿<UserControl x:Class="UchebnayaPractica.Components.SizeControl"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:UchebnayaPractica.Components"
+             mc:Ignorable="d" 
+             d:DesignHeight="40" Height="40" MinHeight="40" MaxWidth="975" Width="975" MinWidth="450">
+    <Grid>
+        <StackPanel Orientation="Horizontal">
+            <Image x:Name="Trash" Source="{StaticResource delete_1_svgrepo_comDrawingImage}" MouseDown="Trash_MouseDown" Height="25" Width="25" Margin="10 0 15 0"></Image>
+            <TextBox x:Name="NameTb" Text="{Binding Name}" Height="25" Width="200" Margin="0 0 5 0" TextChanged="NameTb_TextChanged">
+                <TextBox.Style>
+                    <Style TargetType="TextBox" xmlns:sys="clr-namespace:System;assembly=mscorlib">
+                        <Style.Resources>
+                            <VisualBrush x:Key="CueBannerBrush" AlignmentX="Left" AlignmentY="Center" Stretch="None">
+                                <VisualBrush.Visual>
+                                    <Label Content="Наименование размера" Foreground="#FF909090" FontWeight="DemiBold" />
+                                </VisualBrush.Visual>
+                            </VisualBrush>
+                        </Style.Resources>
+                        <Style.Triggers>
+                            <Trigger Property="Text" Value="{x:Static sys:String.Empty}">
+                                <Setter Property="Background" Value="{StaticResource CueBannerBrush}" />
+                            </Trigger>
+                            <Trigger Property="Text" Value="{x:Null}">
+                                <Setter Property="Background" Value="{StaticResource CueBannerBrush}" />
+                            </Trigger>
+                            <Trigger Property="IsKeyboardFocused" Value="True">
+                                <Setter Property="Background" Value="White" />
+                            </Trigger>
+                        </Style.Triggers>
+                    </Style>
+                </TextBox.Style>
+            </TextBox>
+            <TextBox x:Name="CountTb" Text="{Binding SizeValue, StringFormat={}{0:F0}}" Height="25" Width="80" PreviewTextInput="CountTb_PreviewTextInput" TextChanged="CountTb_TextChanged">
+                <TextBox.Style>
+                    <Style TargetType="TextBox" xmlns:sys="clr-namespace:System;assembly=mscorlib">
+                        <Style.Resources>
+                            <VisualBrush x:Key="CueBannerBrush" AlignmentX="Left" AlignmentY="Center" Stretch="None">
+                                <VisualBrush.Visual>
+                                    <Label Content="Значение" Foreground="#FF909090" FontWeight="DemiBold" />
+                                </VisualBrush.Visual>
+                            </VisualBrush>
+                        </Style.Resources>
+                        <Style.Triggers>
+                            <Trigger Property="Text" Value="{x:Static sys:String.Empty}">
+                                <Setter Property="Background" Value="{StaticResource CueBannerBrush}" />
+                            </Trigger>
+                            <Trigger Property="Text" Value="{x:Null}">
+                                <Setter Property="Background" Value="{StaticResource CueBannerBrush}" />
+                            </Trigger>
+                            <Trigger Property="IsKeyboardFocused" Value="True">
+                                <Setter Property="Background" Value="White" />
+                            </Trigger>
+                        </Style.Triggers>
+                    </Style>
+                </TextBox.Style>
+            </TextBox>
+            <ComboBox x:Name="UnitCb" SelectedItem="{Binding Unit}" DisplayMemberPath="Name" Height="25" Width="100" Margin="5 0 0 0" SelectionChanged="UnitCb_SelectionChanged" ></ComboBox>
+        </StackPanel> 
+    </Grid>
+</UserControl>

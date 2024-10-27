@@ -14,8 +14,9 @@ namespace UchebnayaPractica.Database
     
     public partial class ProductDetail
     {
-        public int IdProduct { get; set; }
-        public int IdDetail { get; set; }
+        public int Id { get; set; }
+        public Nullable<int> IdProduct { get; set; }
+        public Nullable<int> IdDetail { get; set; }
         public Nullable<int> Count { get; set; }
     
         public virtual Product Product { get; set; }

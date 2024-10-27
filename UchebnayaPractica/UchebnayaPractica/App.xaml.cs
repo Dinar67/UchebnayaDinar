@@ -1,4 +1,6 @@
 ﻿using System.Windows;
+using System.Windows.Controls;
+using UchebnayaPractica.Components;
 using UchebnayaPractica.Database;
 using UchebnayaPractica.Pages;
 
@@ -13,5 +15,6 @@ namespace UchebnayaPractica
         public static MainWindow mainWindow;
         public static User currentUser;
         public static EmployeePage employeePage;
+        public static ProductControl productControl;
     }
 }

@@ -137,6 +137,97 @@
                 </DrawingGroup>
             </DrawingImage.Drawing>
         </DrawingImage>
+        <DrawingImage x:Key="plan_of_a_house_svgrepo_comDrawingImage">
+            <DrawingImage.Drawing>
+                <DrawingGroup ClipGeometry="M0,0 V284.999 H284.999 V0 H0 Z">
+                    <DrawingGroup Opacity="1">
+                        <DrawingGroup Opacity="1">
+                            <GeometryDrawing Brush="#FFBB0C07" Geometry="F1 M284.999,284.999z M0,0z M278.222,33.93L74.64,33.93C72.846,33.93,71.126,34.644,69.846,35.915L1.986,103.776C0.724,105.047,0,106.77,0,108.57L0,244.282C0,248.03,3.037,251.07,6.778,251.07L278.221,251.07C281.962,251.07,284.999,248.03,284.999,244.282L284.999,40.718C285,36.97,281.963,33.93,278.222,33.93z M271.424,237.503L13.576,237.503 13.576,115.357 74.64,115.357C78.4,115.357,81.437,112.317,81.437,108.569L81.437,47.497 271.424,47.497 271.424,237.503z" />
+                            <GeometryDrawing Brush="#FFBB0C07" Geometry="F1 M284.999,284.999z M0,0z M61.063,135.709C57.321,135.709,54.285,138.749,54.285,142.497L54.285,193.395C54.285,197.143,57.321,200.174,61.063,200.174L230.714,200.174C234.456,200.174,237.493,197.143,237.493,193.395L237.493,91.604C237.493,87.856,234.456,84.825,230.714,84.825L162.854,84.825C159.112,84.825,156.076,87.856,156.076,91.604L156.076,135.708 61.063,135.708 61.063,135.709z M190.006,149.285L190.006,186.608 115.349,186.608 115.349,149.285 190.006,149.285z M67.86,149.285L101.791,149.285 101.791,186.608 67.86,186.608 67.86,149.285z M203.563,186.607L203.563,149.284 223.936,149.284 223.936,186.607 203.563,186.607z M223.937,98.393L223.937,135.709 169.652,135.709 169.652,98.393 223.937,98.393z" />
+                        </DrawingGroup>
+                    </DrawingGroup>
+                </DrawingGroup>
+            </DrawingImage.Drawing>
+        </DrawingImage>
+        <DrawingImage x:Key="menu_svgrepo_comDrawingImage">
+            <DrawingImage.Drawing>
+                <DrawingGroup ClipGeometry="M0,0 V24 H24 V0 H0 Z">
+                    <GeometryDrawing Geometry="F1 M24,24z M0,0z M4,6L20,6 M4,12L20,12 M4,18L20,18">
+                        <GeometryDrawing.Pen>
+                            <Pen Brush="#FFBB0C07" Thickness="2" StartLineCap="Round" EndLineCap="Round" LineJoin="Round" MiterLimit="1" />
+                        </GeometryDrawing.Pen>
+                    </GeometryDrawing>
+                </DrawingGroup>
+            </DrawingImage.Drawing>
+        </DrawingImage>
+        <DrawingImage x:Key="order_svgrepo_comDrawingImage">
+            <DrawingImage.Drawing>
+                <DrawingGroup ClipGeometry="M0,0 V24 H24 V0 H0 Z">
+                    <GeometryDrawing Brush="#FFBB0C07" Geometry="F0 M24,24z M0,0z M5.58579,4.58579C5,5.17157,5,6.11438,5,8L5,17C5,18.8856 5,19.8284 5.58579,20.4142 6.17157,21 7.11438,21 9,21L15,21C16.8856,21 17.8284,21 18.4142,20.4142 19,19.8284 19,18.8856 19,17L19,8C19,6.11438 19,5.17157 18.4142,4.58579 17.8284,4 16.8856,4 15,4L9,4C7.11438,4,6.17157,4,5.58579,4.58579z M9,8C8.44772,8 8,8.44772 8,9 8,9.55228 8.44772,10 9,10L15,10C15.5523,10 16,9.55228 16,9 16,8.44772 15.5523,8 15,8L9,8z M9,12C8.44772,12 8,12.4477 8,13 8,13.5523 8.44772,14 9,14L15,14C15.5523,14 16,13.5523 16,13 16,12.4477 15.5523,12 15,12L9,12z M9,16C8.44772,16 8,16.4477 8,17 8,17.5523 8.44772,18 9,18L13,18C13.5523,18 14,17.5523 14,17 14,16.4477 13.5523,16 13,16L9,16z" />
+                </DrawingGroup>
+            </DrawingImage.Drawing>
+        </DrawingImage>
+        <DrawingImage x:Key="add_svgrepo_comDrawingImage">
+            <DrawingImage.Drawing>
+                <DrawingGroup ClipGeometry="M0,0 V24 H24 V0 H0 Z">
+                    <DrawingGroup Opacity="1">
+                        <DrawingGroup Opacity="1">
+                            <DrawingGroup Opacity="1">
+                                <GeometryDrawing>
+                                    <GeometryDrawing.Pen>
+                                        <Pen Brush="White" Thickness="2" StartLineCap="Round" EndLineCap="Round" LineJoin="Round" MiterLimit="1" />
+                                    </GeometryDrawing.Pen>
+                                    <GeometryDrawing.Geometry>
+                                        <LineGeometry StartPoint="12,19" EndPoint="12,5" />
+                                    </GeometryDrawing.Geometry>
+                                </GeometryDrawing>
+                                <GeometryDrawing>
+                                    <GeometryDrawing.Pen>
+                                        <Pen Brush="White" Thickness="2" StartLineCap="Round" EndLineCap="Round" LineJoin="Round" MiterLimit="1" />
+                                    </GeometryDrawing.Pen>
+                                    <GeometryDrawing.Geometry>
+                                        <LineGeometry StartPoint="5,12" EndPoint="19,12" />
+                                    </GeometryDrawing.Geometry>
+                                </GeometryDrawing>
+                            </DrawingGroup>
+                        </DrawingGroup>
+                    </DrawingGroup>
+                </DrawingGroup>
+            </DrawingImage.Drawing>
+        </DrawingImage>
+        <DrawingImage x:Key="save_svgrepo_comDrawingImage">
+            <DrawingImage.Drawing>
+                <DrawingGroup ClipGeometry="M0,0 V24 H24 V0 H0 Z">
+                    <GeometryDrawing Geometry="F1 M24,24z M0,0z M4,6C4,4.89543,4.89543,4,6,4L12,4 14.1716,4C14.702,4,15.2107,4.21071,15.5858,4.58579L19.4142,8.41421C19.7893,8.78929,20,9.29799,20,9.82843L20,12 20,18C20,19.1046,19.1046,20,18,20L6,20C4.89543,20,4,19.1046,4,18L4,6z">
+                        <GeometryDrawing.Pen>
+                            <Pen Brush="#FFBB0C07" Thickness="2" StartLineCap="Round" EndLineCap="Round" LineJoin="Round" MiterLimit="1" />
+                        </GeometryDrawing.Pen>
+                    </GeometryDrawing>
+                    <GeometryDrawing Geometry="F1 M24,24z M0,0z M8,4L13,4 13,7C13,7.55228,12.5523,8,12,8L9,8C8.44772,8,8,7.55228,8,7L8,4z">
+                        <GeometryDrawing.Pen>
+                            <Pen Brush="#FFBB0C07" Thickness="2" StartLineCap="Round" EndLineCap="Round" LineJoin="Round" MiterLimit="1" />
+                        </GeometryDrawing.Pen>
+                    </GeometryDrawing>
+                    <GeometryDrawing Geometry="F1 M24,24z M0,0z M7,15C7,13.8954,7.89543,13,9,13L15,13C16.1046,13,17,13.8954,17,15L17,20 7,20 7,15z">
+                        <GeometryDrawing.Pen>
+                            <Pen Brush="#FFBB0C07" Thickness="2" StartLineCap="Round" EndLineCap="Round" LineJoin="Round" MiterLimit="1" />
+                        </GeometryDrawing.Pen>
+                    </GeometryDrawing>
+                </DrawingGroup>
+            </DrawingImage.Drawing>
+        </DrawingImage>
+        <DrawingImage x:Key="history_svgrepo_comDrawingImage">
+            <DrawingImage.Drawing>
+                <DrawingGroup ClipGeometry="M0,0 V24 H24 V0 H0 Z">
+                    <GeometryDrawing Geometry="F1 M24,24z M0,0z M12,8L12,12 14.5,14.5">
+                        <GeometryDrawing.Pen>
+                            <Pen Brush="White" Thickness="1.5" StartLineCap="Round" EndLineCap="Round" LineJoin="Round" MiterLimit="1" />
+                        </GeometryDrawing.Pen>
+                    </GeometryDrawing>
+                    <GeometryDrawing Brush="White" Geometry="F1 M24,24z M0,0z M5.60423,5.60423L5.0739,5.0739 5.0739,5.0739 5.60423,5.60423z M4.33785,6.87061L3.58786,6.87438C3.58992,7.28564,3.92281,7.61853,4.33408,7.6206L4.33785,6.87061z M6.87963,7.63339C7.29384,7.63547 7.63131,7.30138 7.63339,6.88717 7.63547,6.47296 7.30138,6.13549 6.88717,6.13341L6.87963,7.63339z M5.07505,4.32129C5.07296,3.90708 4.7355,3.57298 4.32129,3.57506 3.90708,3.57715 3.57298,3.91462 3.57507,4.32882L5.07505,4.32129z M3.75,12C3.75,11.5858 3.41421,11.25 3,11.25 2.58579,11.25 2.25,11.5858 2.25,12L3.75,12z M16.8755,20.4452C17.2341,20.2378 17.3566,19.779 17.1492,19.4204 16.9418,19.0619 16.483,18.9393 16.1245,19.1468L16.8755,20.4452z M19.1468,16.1245C18.9393,16.483 19.0619,16.9418 19.4204,17.1492 19.779,17.3566 20.2378,17.2341 20.4452,16.8755L19.1468,16.1245z M5.14033,5.07126C4.84598,5.36269 4.84361,5.83756 5.13505,6.13191 5.42648,6.42626 5.90134,6.42862 6.19569,6.13719L5.14033,5.07126z M18.8623,5.13786C15.0421,1.31766,8.86882,1.27898,5.0739,5.0739L6.13456,6.13456C9.33366,2.93545,14.5572,2.95404,17.8017,6.19852L18.8623,5.13786z M5.0739,5.0739L3.80752,6.34028 4.86818,7.40094 6.13456,6.13456 5.0739,5.0739z M4.33408,7.6206L6.87963,7.63339 6.88717,6.13341 4.34162,6.12062 4.33408,7.6206z M5.08784,6.86684L5.07505,4.32129 3.57507,4.32882 3.58786,6.87438 5.08784,6.86684z M12,3.75C16.5563,3.75,20.25,7.44365,20.25,12L21.75,12C21.75,6.61522,17.3848,2.25,12,2.25L12,3.75z M12,20.25C7.44365,20.25,3.75,16.5563,3.75,12L2.25,12C2.25,17.3848,6.61522,21.75,12,21.75L12,20.25z M16.1245,19.1468C14.9118,19.8483,13.5039,20.25,12,20.25L12,21.75C13.7747,21.75,15.4407,21.2752,16.8755,20.4452L16.1245,19.1468z M20.25,12C20.25,13.5039,19.8483,14.9118,19.1468,16.1245L20.4452,16.8755C21.2752,15.4407,21.75,13.7747,21.75,12L20.25,12z M6.19569,6.13719C7.68707,4.66059,9.73646,3.75,12,3.75L12,2.25C9.32542,2.25,6.90113,3.32791,5.14033,5.07126L6.19569,6.13719z" />
+                </DrawingGroup>
+            </DrawingImage.Drawing>
+        </DrawingImage>
 
         <Style TargetType="Button" x:Key="StilyzedButton">
             <Style.Resources>
@@ -150,6 +241,7 @@
                 </Setter.Value>
             </Setter>
             <Setter Property="Background" Value="#FFBB0C07"></Setter>
+            <Setter Property="BorderBrush" Value="#FFBB0C07"></Setter>
             <Setter Property="Foreground" Value="White"></Setter>
             <Setter Property="Height" Value="30"> </Setter>
         </Style>

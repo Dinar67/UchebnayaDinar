@@ -12,13 +12,18 @@ namespace UchebnayaPractica.Database
     using System;
     using System.Collections.Generic;
     
-    public partial class UserOperation
+    public partial class StatusOrder
     {
         public int Id { get; set; }
-        public Nullable<int> IdOperation { get; set; }
-        public string Login { get; set; }
+        public Nullable<int> IdStatus { get; set; }
+        public Nullable<int> IdOldStatus { get; set; }
+        public Nullable<System.DateTime> DateChange { get; set; }
+        public Nullable<System.TimeSpan> TimeChange { get; set; }
+        public string OrderNumber { get; set; }
+        public string Description { get; set; }
     
-        public virtual Operation Operation { get; set; }
-        public virtual User User { get; set; }
+        public virtual Order Order { get; set; }
+        public virtual OrderStatus OrderStatus { get; set; }
+        public virtual OrderStatus OrderStatus1 { get; set; }
     }
 }

@@ -50,7 +50,7 @@
                         <TextBox TextWrapping="Wrap" Height="80"  Text="{Binding Education}"></TextBox>
                     </StackPanel>
                     <StackPanel Orientation="Vertical" Margin="0 0 0 10">
-                        <TextBlock Width="100" Margin="0 0 0 5" HorizontalAlignment="Left">Адресс</TextBlock>
+                        <TextBlock Width="100" Margin="0 0 0 5" HorizontalAlignment="Left">Адрес</TextBlock>
                         <TextBox TextWrapping="Wrap" Height="50"  Text="{Binding Address}"></TextBox>
                     </StackPanel>
                 </StackPanel>

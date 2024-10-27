@@ -1,0 +1,25 @@
+﻿<Window x:Class="UchebnayaPractica.Windows.DocumentsWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:UchebnayaPractica.Windows"
+        mc:Ignorable="d"
+        Height="300" Width="400" MinHeight="300" MinWidth="400" Icon="\Images\Logo_Color_Transparent.ico">
+    <Grid>
+        <TextBlock  FontWeight="Bold" FontSize="18" Margin="10 5 0 0">Документы заказа</TextBlock>
+        <ScrollViewer HorizontalScrollBarVisibility="Disabled" VerticalScrollBarVisibility="Auto" Margin="10 35 10 10">
+            <WrapPanel x:Name="MyPanel"></WrapPanel>
+        </ScrollViewer>
+        <Button x:Name="AddBtn" Grid.Row="1" Width="25" Height="25" Style="{StaticResource StilyzedButton}" HorizontalAlignment="Left" VerticalAlignment="Bottom" Margin="5" Click="AddBtn_Click">
+            <Button.Resources>
+                <Style TargetType="Border">
+                    <Setter Property="CornerRadius" Value="25"></Setter>
+                </Style>
+            </Button.Resources>
+            <Button.Content>
+                <Image Source="{StaticResource add_svgrepo_comDrawingImage}" Width="12" Height="12" />
+            </Button.Content>
+        </Button>
+    </Grid>
+</Window>

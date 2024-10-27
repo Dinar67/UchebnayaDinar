@@ -19,7 +19,7 @@ namespace UchebnayaPractica.Database
         public string MaterialArticle { get; set; }
         public decimal Count { get; set; }
     
-        public virtual Product Product { get; set; }
         public virtual Material Material { get; set; }
+        public virtual Product Product { get; set; }
     }
 }
