@@ -16,5 +16,7 @@ namespace UchebnayaPractica
         public static User currentUser;
         public static EmployeePage employeePage;
         public static ProductControl productControl;
+
+        
     }
 }

@@ -40,6 +40,16 @@
     <Property Name="IdTypeEquipment" Type="int" />
     <Property Name="Characteristic" Type="nvarchar(max)" />
   </EntityType>
+  <EntityType Name="HardwareFailure">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="Model" Type="nvarchar" MaxLength="50" />
+    <Property Name="FailureStart" Type="datetime" />
+    <Property Name="FailureEnd" Type="datetime" />
+    <Property Name="Reason" Type="nvarchar(max)" />
+  </EntityType>
   <EntityType Name="Item">
     <Key>
       <PropertyRef Name="Id" />
@@ -361,6 +371,18 @@
       </Principal>
       <Dependent Role="Equipment">
         <PropertyRef Name="IdTypeEquipment" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_HardwareFailure_Equipment">
+    <End Role="Equipment" Type="Self.Equipment" Multiplicity="0..1" />
+    <End Role="HardwareFailure" Type="Self.HardwareFailure" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Equipment">
+        <PropertyRef Name="Model" />
+      </Principal>
+      <Dependent Role="HardwareFailure">
+        <PropertyRef Name="Model" />
       </Dependent>
     </ReferentialConstraint>
   </Association>
@@ -711,6 +733,7 @@
     <EntitySet Name="AcessoriesImage" EntityType="Self.AcessoriesImage" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="Document" EntityType="Self.Document" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="Equipment" EntityType="Self.Equipment" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="HardwareFailure" EntityType="Self.HardwareFailure" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="Item" EntityType="Self.Item" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="Location" EntityType="Self.Location" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="Material" EntityType="Self.Material" Schema="dbo" store:Type="Tables" />
@@ -764,6 +787,10 @@
     <AssociationSet Name="FK_Equipment_TypeEquipment" Association="Self.FK_Equipment_TypeEquipment">
       <End Role="TypeEquipment" EntitySet="TypeEquipment" />
       <End Role="Equipment" EntitySet="Equipment" />
+    </AssociationSet>
+    <AssociationSet Name="FK_HardwareFailure_Equipment" Association="Self.FK_HardwareFailure_Equipment">
+      <End Role="Equipment" EntitySet="Equipment" />
+      <End Role="HardwareFailure" EntitySet="HardwareFailure" />
     </AssociationSet>
     <AssociationSet Name="FK_Location_WorkshopItem" Association="Self.FK_Location_WorkshopItem">
       <End Role="WorkshopItem" EntitySet="WorkshopItem" />

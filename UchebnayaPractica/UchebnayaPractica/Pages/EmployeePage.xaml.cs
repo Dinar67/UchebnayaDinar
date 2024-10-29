@@ -52,6 +52,11 @@ namespace UchebnayaPractica.Pages
         {
             if (Methods.TakeChoice("Вы точно хотите удалить сотрудника?"))
             {
+                if(((sender as Image).DataContext as User).Login == App.currentUser.Login)
+                {
+                    Methods.TakeWarning("Вы не можете уждалить самого себя!");
+                    return;
+                }
                 App.db.User.Remove((sender as Image).DataContext as User);
                 Methods.TakeInformation("Успешно удалено!");
             }

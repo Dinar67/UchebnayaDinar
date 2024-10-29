@@ -1,0 +1,89 @@
+﻿<Page x:Class="UchebnayaPractica.Pages.AddEditFailure"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:local="clr-namespace:UchebnayaPractica.Pages"
+      mc:Ignorable="d" 
+      d:DesignHeight="600" d:DesignWidth="1000"
+      Title="AddEditFailure">
+
+    <Grid>
+        <StackPanel x:Name="MainPanel" HorizontalAlignment="Center" VerticalAlignment="Center">
+            <TextBlock x:Name="TitleTb" FontWeight="Bold" FontSize="20" Foreground="#FFBB0C07" HorizontalAlignment="Center" Margin="0 0 0 20">Зарегистрировать поломку</TextBlock>
+            <StackPanel VerticalAlignment="Center">
+                <StackPanel Orientation="Horizontal" Margin="0 0 0 10">
+                    <TextBlock Width="170">Оборудование</TextBlock>
+                    <ComboBox Width="300" x:Name="EquipmentCb" IsEditable="True" SelectedItem="{Binding Equipment}" DisplayMemberPath="Model" SelectionChanged="EquipmentCb_SelectionChanged"></ComboBox>
+                </StackPanel>
+                <StackPanel Orientation="Horizontal" Margin="0 0 0 10">
+                    <TextBlock Width="170">Тип оборудования</TextBlock>
+                    <ComboBox Width="300" IsEnabled="False" x:Name="TypeEquipmentCb" DisplayMemberPath="Name"></ComboBox>
+                </StackPanel>
+                <StackPanel Orientation="Horizontal" Margin="0 0 0 10">
+                    <TextBlock Width="170" VerticalAlignment="Center">Дата и время начала сбоя</TextBlock>
+                    <DatePicker x:Name="StartDate" Width="235" ></DatePicker>
+                    <TextBox x:Name="StartTimeTb"  Height="25" Width="50" Margin="15 0 0 0" TextChanged="StartTimeTb_TextChanged">
+                        <TextBox.Style>
+                            <Style TargetType="TextBox" xmlns:sys="clr-namespace:System;assembly=mscorlib">
+                                <Style.Resources>
+                                    <VisualBrush x:Key="CueBannerBrush" AlignmentX="Left" AlignmentY="Center" Stretch="None">
+                                        <VisualBrush.Visual>
+                                            <Label Content="ЧЧ:ММ" Foreground="#FF909090" FontWeight="DemiBold" />
+                                        </VisualBrush.Visual>
+                                    </VisualBrush>
+                                </Style.Resources>
+                                <Style.Triggers>
+                                    <Trigger Property="Text" Value="{x:Static sys:String.Empty}">
+                                        <Setter Property="Background" Value="{StaticResource CueBannerBrush}" />
+                                    </Trigger>
+                                    <Trigger Property="Text" Value="{x:Null}">
+                                        <Setter Property="Background" Value="{StaticResource CueBannerBrush}" />
+                                    </Trigger>
+                                    <Trigger Property="IsKeyboardFocused" Value="True">
+                                        <Setter Property="Background" Value="White" />
+                                    </Trigger>
+                                </Style.Triggers>
+                            </Style>
+                        </TextBox.Style>
+                    </TextBox>
+                </StackPanel>
+                <StackPanel Orientation="Horizontal" Margin="0 0 0 10">
+                    <TextBlock Width="170" VerticalAlignment="Center">Дата и время конца сбоя</TextBlock>
+                    <DatePicker x:Name="EndDate" Width="235" ></DatePicker>
+                    <TextBox x:Name="EndTimeTb"  Height="25" Width="50" Margin="15 0 0 0" TextChanged="EndTimeTb_TextChanged">
+                        <TextBox.Style>
+                            <Style TargetType="TextBox" xmlns:sys="clr-namespace:System;assembly=mscorlib">
+                                <Style.Resources>
+                                    <VisualBrush x:Key="CueBannerBrush" AlignmentX="Left" AlignmentY="Center" Stretch="None">
+                                        <VisualBrush.Visual>
+                                            <Label Content="ЧЧ:ММ" Foreground="#FF909090" FontWeight="DemiBold" />
+                                        </VisualBrush.Visual>
+                                    </VisualBrush>
+                                </Style.Resources>
+                                <Style.Triggers>
+                                    <Trigger Property="Text" Value="{x:Static sys:String.Empty}">
+                                        <Setter Property="Background" Value="{StaticResource CueBannerBrush}" />
+                                    </Trigger>
+                                    <Trigger Property="Text" Value="{x:Null}">
+                                        <Setter Property="Background" Value="{StaticResource CueBannerBrush}" />
+                                    </Trigger>
+                                    <Trigger Property="IsKeyboardFocused" Value="True">
+                                        <Setter Property="Background" Value="White" />
+                                    </Trigger>
+                                </Style.Triggers>
+                            </Style>
+                        </TextBox.Style>
+                    </TextBox>
+                </StackPanel>
+                <StackPanel Orientation="Vertical" Margin="0 0 0 10" x:Name="EducationPanel">
+                    <TextBlock Margin="0 0 0 5" HorizontalAlignment="Left">Причина поломки</TextBlock>
+                    <TextBox x:Name="ReasonTb" Width="470" TextWrapping="Wrap" Height="80"  Text="{Binding Reason}"></TextBox>
+                </StackPanel>
+            </StackPanel>
+            <Button x:Name="SaveBtn" Style="{StaticResource StilyzedButton}" Margin="0 10 0 0" Width="300" Click="SaveBtn_Click">Сохранить</Button>
+        </StackPanel>
+
+        <Image x:Name="Back" Style="{StaticResource InteractionImage}" Source="{StaticResource arrow_ios_back_svgrepo_comDrawingImage}" Width="40" Height="40" Margin="10" HorizontalAlignment="Left" VerticalAlignment="Top" MouseDown="Back_MouseDown"></Image>
+    </Grid>
+</Page>

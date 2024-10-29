@@ -23,5 +23,7 @@
             </StackPanel>
             <Button x:Name="EditBtn" Style="{StaticResource StilyzedButton}" Margin="0 10 0 0" Click="EditBtn_Click">Изменить</Button>
         </StackPanel>
+
+        
     </Grid>
 </Window>

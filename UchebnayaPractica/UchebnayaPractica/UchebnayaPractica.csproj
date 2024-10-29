@@ -94,6 +94,7 @@
     <Compile Include="Components\OperationControl.xaml.cs">
       <DependentUpon>OperationControl.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Components\Product.cs" />
     <Compile Include="Components\SizeControl.xaml.cs">
       <DependentUpon>SizeControl.xaml</DependentUpon>
     </Compile>
@@ -109,6 +110,9 @@
     <Compile Include="Components\ProductControl.xaml.cs">
       <DependentUpon>ProductControl.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Database\HardwareFailure.cs">
+      <DependentUpon>Model1.tt</DependentUpon>
+    </Compile>
     <Compile Include="Database\OperationSpecification.cs">
       <DependentUpon>Model1.tt</DependentUpon>
     </Compile>
@@ -117,6 +121,12 @@
     </Compile>
     <Compile Include="Database\Size.cs">
       <DependentUpon>Model1.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\AddEditFailure.xaml.cs">
+      <DependentUpon>AddEditFailure.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\FailurePage.xaml.cs">
+      <DependentUpon>FailurePage.xaml</DependentUpon>
     </Compile>
     <Compile Include="Windows\DocumentsWindow.xaml.cs">
       <DependentUpon>DocumentsWindow.xaml</DependentUpon>
@@ -282,6 +292,10 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </Page>
+    <Page Include="Pages\AddEditFailure.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
     <Page Include="Pages\AddEditOrder.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
@@ -297,6 +311,10 @@
     <Page Include="Pages\AuthPage.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Pages\FailurePage.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
     </Page>
     <Page Include="Pages\OrderPage.xaml">
       <Generator>MSBuild:Compile</Generator>

@@ -1,53 +1,12 @@
 {
   "Version": 1,
   "WorkspaceRootPath": "C:\\Users\\user\\source\\repos\\UchebnayaDinar\\UchebnayaPractica\\",
-  "Documents": [
-    {
-      "AbsoluteMoniker": "D:0:0:{08A8F211-B9E6-46F2-940B-9113193F2232}|UchebnayaPractica\\UchebnayaPractica.csproj|c:\\users\\user\\source\\repos\\uchebnayadinar\\uchebnayapractica\\uchebnayapractica\\windows\\historywindow.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}",
-      "RelativeMoniker": "D:0:0:{08A8F211-B9E6-46F2-940B-9113193F2232}|UchebnayaPractica\\UchebnayaPractica.csproj|solutionrelative:uchebnayapractica\\windows\\historywindow.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{08A8F211-B9E6-46F2-940B-9113193F2232}|UchebnayaPractica\\UchebnayaPractica.csproj|c:\\users\\user\\source\\repos\\uchebnayadinar\\uchebnayapractica\\uchebnayapractica\\windows\\historywindow.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{08A8F211-B9E6-46F2-940B-9113193F2232}|UchebnayaPractica\\UchebnayaPractica.csproj|solutionrelative:uchebnayapractica\\windows\\historywindow.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    }
-  ],
+  "Documents": [],
   "DocumentGroupContainers": [
     {
       "Orientation": 0,
       "VerticalTabListWidth": 256,
-      "DocumentGroups": [
-        {
-          "DockedWidth": 200,
-          "SelectedChildIndex": 0,
-          "Children": [
-            {
-              "$type": "Document",
-              "DocumentIndex": 0,
-              "Title": "HistoryWindow.xaml",
-              "DocumentMoniker": "C:\\Users\\user\\source\\repos\\UchebnayaDinar\\UchebnayaPractica\\UchebnayaPractica\\Windows\\HistoryWindow.xaml",
-              "RelativeDocumentMoniker": "UchebnayaPractica\\Windows\\HistoryWindow.xaml",
-              "ToolTip": "C:\\Users\\user\\source\\repos\\UchebnayaDinar\\UchebnayaPractica\\UchebnayaPractica\\Windows\\HistoryWindow.xaml",
-              "RelativeToolTip": "UchebnayaPractica\\Windows\\HistoryWindow.xaml",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003549|",
-              "WhenOpened": "2024-10-27T21:37:07.244Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 1,
-              "Title": "HistoryWindow.xaml.cs",
-              "DocumentMoniker": "C:\\Users\\user\\source\\repos\\UchebnayaDinar\\UchebnayaPractica\\UchebnayaPractica\\Windows\\HistoryWindow.xaml.cs",
-              "RelativeDocumentMoniker": "UchebnayaPractica\\Windows\\HistoryWindow.xaml.cs",
-              "ToolTip": "C:\\Users\\user\\source\\repos\\UchebnayaDinar\\UchebnayaPractica\\UchebnayaPractica\\Windows\\HistoryWindow.xaml.cs",
-              "RelativeToolTip": "UchebnayaPractica\\Windows\\HistoryWindow.xaml.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAMAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-10-27T21:37:28.945Z",
-              "EditorCaption": ""
-            }
-          ]
-        }
-      ]
+      "DocumentGroups": []
     }
   ]
 }

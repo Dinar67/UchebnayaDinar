@@ -28,6 +28,7 @@
                     </Image>
                     <Image Visibility="Collapsed" x:Name="Material" Style="{StaticResource InteractionImage}" Source="{StaticResource MaterialDrawingImage}" Height="40" Width="40" Margin="30 0 0 0" MouseDown="Material_MouseDown"></Image>
                     <Image Visibility="Collapsed" x:Name="Order" Style="{StaticResource InteractionImage}" Source="{StaticResource order_svgrepo_comDrawingImage}" Height="50" Width="50" Margin="30 -3 0 0" MouseDown="Order_MouseDown"></Image>
+                    <Image Visibility="Collapsed" x:Name="Failure" Style="{StaticResource InteractionImage}" Source="{StaticResource warning_error_security_computer_caution_svgrepo_comDrawingImage}" Height="50" Width="50" Margin="30 -3 0 0" MouseDown="Failure_MouseDown"></Image>
                 </StackPanel>
 
                 <Image Visibility="Collapsed" x:Name="Person" Style="{StaticResource InteractionImage}" Source="{StaticResource PersonDrawingImage}" HorizontalAlignment="Left" VerticalAlignment="Center" Width="40" Height="40" Margin="10 0 0 0" MouseDown="Person_MouseDown"></Image>

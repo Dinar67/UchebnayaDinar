@@ -55,5 +55,6 @@ namespace UchebnayaPractica.Database
         public virtual DbSet<OperationSpecification> OperationSpecification { get; set; }
         public virtual DbSet<ProductMaterial> ProductMaterial { get; set; }
         public virtual DbSet<Size> Size { get; set; }
+        public virtual DbSet<HardwareFailure> HardwareFailure { get; set; }
     }
 }

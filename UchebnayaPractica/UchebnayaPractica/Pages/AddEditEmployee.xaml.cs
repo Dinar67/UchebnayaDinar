@@ -22,7 +22,7 @@ namespace UchebnayaPractica.Pages
         public AddEditEmployee(User user,bool isNew, string title = "Добавить сотрудника")
         {
             InitializeComponent();
-
+            LoginTb.IsEnabled = false;
             if (!App.mainWindow.MainFrame.CanGoBack)
                 Back.Visibility = Visibility.Collapsed;
 

@@ -228,6 +228,22 @@
                 </DrawingGroup>
             </DrawingImage.Drawing>
         </DrawingImage>
+        <DrawingImage x:Key="warning_error_security_computer_caution_svgrepo_comDrawingImage">
+            <DrawingImage.Drawing>
+                <DrawingGroup ClipGeometry="M0,0 V512 H512 V0 H0 Z">
+                    <DrawingGroup Opacity="1">
+                        <GeometryDrawing Brush="#FFBB0C07" Geometry="F1 M512,512z M0,0z M80.9175,377.0605L202,377.0605 202,439.16 139,439.16A9.8965,9.8965,0,1,0,139,458.9529L373,458.9529A9.8965,9.8965,0,1,0,373,439.16L310,439.16 310,377.0605 431.0869,377.0605A49.9019,49.9019,0,0,0,480.64,332.9351L31.36,332.9351A49.9094,49.9094,0,0,0,80.9175,377.0605z" />
+                        <GeometryDrawing Brush="#FFBB0C07" Geometry="F1 M512,512z M0,0z M431.0836,53.0474L80.9175,53.0474A49.9174,49.9174,0,0,0,31,102.9648L31,313.1421 481,313.1421 481,102.9637A49.9163,49.9163,0,0,0,431.0836,53.0474z M171.5252,239.4111L236.5526,126.7789A22.4559,22.4559,0,0,1,275.4474,126.7789L340.4748,239.4111A22.4558,22.4558,0,0,1,321.0275,273.0947L190.9725,273.0947A22.4558,22.4558,0,0,1,171.5252,239.4111z" />
+                        <GeometryDrawing Brush="#FFBB0C07">
+                            <GeometryDrawing.Geometry>
+                                <EllipseGeometry RadiusX="11.25" RadiusY="11.25" Center="256,235.8676" />
+                            </GeometryDrawing.Geometry>
+                        </GeometryDrawing>
+                        <GeometryDrawing Brush="#FFBB0C07" Geometry="F1 M512,512z M0,0z M246.1079,166.3208L246.1079,203.5513A9.8965,9.8965,0,0,0,265.9009,203.5513L265.9009,166.3208A9.8965,9.8965,0,0,0,246.1079,166.3208z" />
+                    </DrawingGroup>
+                </DrawingGroup>
+            </DrawingImage.Drawing>
+        </DrawingImage>
 
         <Style TargetType="Button" x:Key="StilyzedButton">
             <Style.Resources>

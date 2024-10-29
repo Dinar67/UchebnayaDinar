@@ -12,20 +12,14 @@ namespace UchebnayaPractica.Database
     using System;
     using System.Collections.Generic;
     
-    public partial class Equipment
+    public partial class HardwareFailure
     {
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
-        public Equipment()
-        {
-            this.HardwareFailure = new HashSet<HardwareFailure>();
-        }
-    
+        public int Id { get; set; }
         public string Model { get; set; }
-        public Nullable<int> IdTypeEquipment { get; set; }
-        public string Characteristic { get; set; }
+        public Nullable<System.DateTime> FailureStart { get; set; }
+        public Nullable<System.DateTime> FailureEnd { get; set; }
+        public string Reason { get; set; }
     
-        public virtual TypeEquipment TypeEquipment { get; set; }
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<HardwareFailure> HardwareFailure { get; set; }
+        public virtual Equipment Equipment { get; set; }
     }
 }

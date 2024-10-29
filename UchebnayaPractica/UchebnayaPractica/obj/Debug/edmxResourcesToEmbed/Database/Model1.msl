@@ -307,5 +307,16 @@
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>
+    <EntitySetMapping Name="HardwareFailure">
+      <EntityTypeMapping TypeName="UchebkaModel.HardwareFailure">
+        <MappingFragment StoreEntitySet="HardwareFailure">
+          <ScalarProperty Name="Reason" ColumnName="Reason" />
+          <ScalarProperty Name="FailureEnd" ColumnName="FailureEnd" />
+          <ScalarProperty Name="FailureStart" ColumnName="FailureStart" />
+          <ScalarProperty Name="Model" ColumnName="Model" />
+          <ScalarProperty Name="Id" ColumnName="Id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
   </EntityContainerMapping>
 </Mapping>

@@ -167,6 +167,11 @@
       <End Role="Unit" EntitySet="Unit" />
       <End Role="Size" EntitySet="Size" />
     </AssociationSet>
+    <EntitySet Name="HardwareFailure" EntityType="UchebkaModel.HardwareFailure" />
+    <AssociationSet Name="FK_HardwareFailure_Equipment" Association="UchebkaModel.FK_HardwareFailure_Equipment">
+      <End Role="Equipment" EntitySet="Equipment" />
+      <End Role="HardwareFailure" EntitySet="HardwareFailure" />
+    </AssociationSet>
   </EntityContainer>
   <EntityType Name="AcessoriesImage">
     <Key>
@@ -184,6 +189,7 @@
     <Property Name="IdTypeEquipment" Type="Int32" />
     <Property Name="Characteristic" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
     <NavigationProperty Name="TypeEquipment" Relationship="UchebkaModel.FK_Equipment_TypeEquipment" FromRole="Equipment" ToRole="TypeEquipment" />
+    <NavigationProperty Name="HardwareFailure" Relationship="UchebkaModel.FK_HardwareFailure_Equipment" FromRole="Equipment" ToRole="HardwareFailure" />
   </EntityType>
   <EntityType Name="MaterialImage">
     <Key>
@@ -933,6 +939,29 @@
       </Principal>
       <Dependent Role="Size">
         <PropertyRef Name="IdUnit" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityType Name="HardwareFailure">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Model" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="FailureStart" Type="DateTime" Precision="3" />
+    <Property Name="FailureEnd" Type="DateTime" Precision="3" />
+    <Property Name="Reason" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <NavigationProperty Name="Equipment" Relationship="UchebkaModel.FK_HardwareFailure_Equipment" FromRole="HardwareFailure" ToRole="Equipment" />
+  </EntityType>
+  <Association Name="FK_HardwareFailure_Equipment">
+    <End Type="UchebkaModel.Equipment" Role="Equipment" Multiplicity="0..1" />
+    <End Type="UchebkaModel.HardwareFailure" Role="HardwareFailure" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Equipment">
+        <PropertyRef Name="Model" />
+      </Principal>
+      <Dependent Role="HardwareFailure">
+        <PropertyRef Name="Model" />
       </Dependent>
     </ReferentialConstraint>
   </Association>

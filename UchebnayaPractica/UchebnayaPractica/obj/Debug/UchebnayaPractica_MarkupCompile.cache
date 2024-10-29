@@ -10,11 +10,11 @@ none
 false
 DEBUG;TRACE
 C:\Users\user\source\repos\UchebnayaDinar\UchebnayaPractica\UchebnayaPractica\App.xaml
-2333261236
+25120961172
 2-1293242089
-66-1080255666
+70-1211278520
 27-1226647224
-Components\OperationControl.xaml;Components\SizeControl.xaml;Components\DocumentControl.xaml;Components\ItemControl.xaml;Components\AccessoriesControl.xaml;Components\MaterialControl.xaml;Components\ProductControl.xaml;MainWindow.xaml;Pages\AccessoriesAndMaterialsPage.xaml;Pages\AddEditAccessoriesPage.xaml;Pages\AddEditOrder.xaml;Pages\AddEditMaterialPage.xaml;Pages\AddEditEmployee.xaml;Pages\AuthPage.xaml;Pages\OrderPage.xaml;Pages\EmployeePage.xaml;Pages\MainPage.xaml;Pages\PlanPage.xaml;Pages\RegPage.xaml;Windows\DocumentsWindow.xaml;Windows\HistoryWindow.xaml;Windows\ProductWindow.xaml;Windows\StatusWindow.xaml;
+Components\OperationControl.xaml;Components\SizeControl.xaml;Components\DocumentControl.xaml;Components\ItemControl.xaml;Components\AccessoriesControl.xaml;Components\MaterialControl.xaml;Components\ProductControl.xaml;MainWindow.xaml;Pages\AccessoriesAndMaterialsPage.xaml;Pages\AddEditAccessoriesPage.xaml;Pages\AddEditFailure.xaml;Pages\AddEditOrder.xaml;Pages\AddEditMaterialPage.xaml;Pages\AddEditEmployee.xaml;Pages\AuthPage.xaml;Pages\FailurePage.xaml;Pages\OrderPage.xaml;Pages\EmployeePage.xaml;Pages\MainPage.xaml;Pages\PlanPage.xaml;Pages\RegPage.xaml;Windows\DocumentsWindow.xaml;Windows\HistoryWindow.xaml;Windows\ProductWindow.xaml;Windows\StatusWindow.xaml;
 
 False
 

@@ -127,11 +127,12 @@ namespace UchebnayaPractica.Pages
         private void MyList_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
             Order order = MyList.SelectedItem as Order;
-            if (order != null && order.CurrentStatus.IdStatus != 2 && order.CurrentStatus.IdStatus != 9 && App.currentUser.RoleId != 3)
+            if (order != null && order.CurrentStatus.IdStatus != 2 && order.CurrentStatus.IdStatus != 9 
+                && App.currentUser.RoleId != 3)
             {
                 if(App.currentUser.RoleId == 4 && order.CurrentStatus.IdStatus < 5 && order.CurrentStatus.IdStatus != 2)
                     StatusBtn.Visibility = Visibility.Visible;
-                else if(App.currentUser.RoleId == 2)
+                else if(App.currentUser.RoleId == 5 || App.currentUser.RoleId == 2)
                     StatusBtn.Visibility = Visibility.Visible;
                 else
                     StatusBtn.Visibility = Visibility.Collapsed;

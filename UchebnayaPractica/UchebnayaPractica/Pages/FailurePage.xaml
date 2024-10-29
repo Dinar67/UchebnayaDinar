@@ -1,0 +1,85 @@
+﻿<Page x:Class="UchebnayaPractica.Pages.FailurePage"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:local="clr-namespace:UchebnayaPractica.Pages"
+      mc:Ignorable="d" 
+      d:DesignHeight="600" d:DesignWidth="1000"
+      Title="FailurePage">
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="53*"/>
+            <RowDefinition Height="533*"/>
+        </Grid.RowDefinitions>
+
+        <StackPanel Margin="20,0,0,0" HorizontalAlignment="Left" VerticalAlignment="Center" Orientation="Horizontal">
+            <TextBlock FontSize="18" Margin="0 0 15 0 ">Поломки</TextBlock>
+            <TextBox Width="180" Height="25" x:Name="SearchTb" TextChanged="SearchTb_TextChanged" >
+                <TextBox.Style>
+                    <Style TargetType="TextBox" xmlns:sys="clr-namespace:System;assembly=mscorlib">
+                        <Style.Resources>
+                            <VisualBrush x:Key="CueBannerBrush" AlignmentX="Left" AlignmentY="Center" Stretch="None">
+                                <VisualBrush.Visual>
+                                    <Label Content="Поиск" Foreground="#FF909090" FontWeight="DemiBold" />
+                                </VisualBrush.Visual>
+                            </VisualBrush>
+                        </Style.Resources>
+                        <Style.Triggers>
+                            <Trigger Property="Text" Value="{x:Static sys:String.Empty}">
+                                <Setter Property="Background" Value="{StaticResource CueBannerBrush}" />
+                            </Trigger>
+                            <Trigger Property="Text" Value="{x:Null}">
+                                <Setter Property="Background" Value="{StaticResource CueBannerBrush}" />
+                            </Trigger>
+                            <Trigger Property="IsKeyboardFocused" Value="True">
+                                <Setter Property="Background" Value="White" />
+                            </Trigger>
+                        </Style.Triggers>
+                    </Style>
+                </TextBox.Style>
+            </TextBox>
+            <TextBlock Margin="10 0 0 0" VerticalAlignment="Center">Сортировать</TextBlock>
+            <ComboBox x:Name="SortCb" Height="25" Width="180" Margin="10 0" SelectionChanged="SortCb_SelectionChanged">
+                <ComboBoxItem>Нет</ComboBoxItem>
+                <ComboBoxItem>По дате и времени начала сбоя в порядке возрастания</ComboBoxItem>
+                <ComboBoxItem>По дате и времени начала сбоя в порядке уменьшения</ComboBoxItem>
+                <ComboBoxItem>По дате и времени конца сбоя в порядке возрастания</ComboBoxItem>
+                <ComboBoxItem>По дате и времени конца сбоя в порядке уменьшения</ComboBoxItem>
+                <ComboBoxItem>По оборудованию</ComboBoxItem>
+            </ComboBox>
+        </StackPanel>
+
+        <ListView Grid.Row="1" x:Name="MyList" >
+            <ListView.View>
+                <GridView>
+                    <GridViewColumn Header="№" Width="70" DisplayMemberBinding="{Binding Id}"></GridViewColumn>
+                    <GridViewColumn Header="Дата заказа" Width="80" DisplayMemberBinding="{Binding Model}"></GridViewColumn>
+                    <GridViewColumn Header="Дата и время начала поломки" Width="200" DisplayMemberBinding="{Binding FailureStart, StringFormat='dd-MM-yyyy  HH:mm'}"></GridViewColumn>
+                    <GridViewColumn Header="Дата и время конца поломки" Width="200" DisplayMemberBinding="{Binding FailureEnd, StringFormat='dd-MM-yyyy  HH:mm'}"></GridViewColumn>
+                    <GridViewColumn Header="Причина" Width="300" DisplayMemberBinding="{Binding Reason}"></GridViewColumn>
+                    <GridViewColumn Width="70" Header="Edit">
+                        <GridViewColumn.CellTemplate>
+                            <DataTemplate>
+                                <Image HorizontalAlignment="Center" x:Name="Edit" Width="40" Height="40" Source="{StaticResource edit_3_svgrepo_comDrawingImage}" Style="{StaticResource InteractionImage}" MouseDown="Edit_MouseDown"></Image>
+                            </DataTemplate>
+                        </GridViewColumn.CellTemplate>
+                    </GridViewColumn>
+                    <GridViewColumn Width="70" Header="Delete">
+                        <GridViewColumn.CellTemplate>
+                            <DataTemplate>
+                                <Image HorizontalAlignment="Center" x:Name="Delete" Width="40" Height="40" Source="{StaticResource delete_1_svgrepo_comDrawingImage}" Style="{StaticResource InteractionImage}" MouseDown="Delete_MouseDown"></Image>
+                            </DataTemplate>
+                        </GridViewColumn.CellTemplate>
+                    </GridViewColumn>
+                </GridView>
+            </ListView.View>
+        </ListView>
+
+        <StackPanel HorizontalAlignment="Right" Grid.Row="0" Orientation="Horizontal"  Width="100" Margin="0 0 40 0">
+            <Button x:Name="AddOrderBtn" Style="{StaticResource StilyzedButton}" Height="30" Width="100" Click="AddOrderBtn_Click">Добавить</Button>
+        </StackPanel>
+
+        
+    </Grid>
+</Page>
