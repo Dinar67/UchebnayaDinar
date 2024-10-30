@@ -55,6 +55,11 @@ namespace UchebnayaPractica.Windows
                     Methods.TakeWarning("Вы не указали причину отмены заказа!");
                     return;
                 }
+                if(statusOrder.IdOldStatus == 7 && statusOrder.IdStatus == 8 && order.Product.Test.Any(x => x.isPassed == false))
+                {                   
+                    Methods.TakeWarning("Не все тесты пройдены!");
+                    return;
+                }
 
                 if (statusOrder.IdOldStatus == 5 && statusOrder.IdStatus == 6)
                 {

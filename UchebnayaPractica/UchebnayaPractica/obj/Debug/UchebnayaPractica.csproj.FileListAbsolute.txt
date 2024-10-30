@@ -87,3 +87,9 @@ C:\Users\user\source\repos\UchebnayaDinar\UchebnayaPractica\UchebnayaPractica\ob
 C:\Users\user\source\repos\UchebnayaDinar\UchebnayaPractica\UchebnayaPractica\obj\Debug\Pages\FailurePage.g.cs
 C:\Users\user\source\repos\UchebnayaDinar\UchebnayaPractica\UchebnayaPractica\obj\Debug\Pages\AddEditFailure.baml
 C:\Users\user\source\repos\UchebnayaDinar\UchebnayaPractica\UchebnayaPractica\obj\Debug\Pages\FailurePage.baml
+C:\Users\user\source\repos\UchebnayaDinar\UchebnayaPractica\UchebnayaPractica\obj\Debug\Pages\TestPage.g.cs
+C:\Users\user\source\repos\UchebnayaDinar\UchebnayaPractica\UchebnayaPractica\obj\Debug\Pages\TestPage.baml
+C:\Users\user\source\repos\UchebnayaDinar\UchebnayaPractica\UchebnayaPractica\obj\Debug\Components\TestControl.g.cs
+C:\Users\user\source\repos\UchebnayaDinar\UchebnayaPractica\UchebnayaPractica\obj\Debug\Pages\AddEditTestPage.g.cs
+C:\Users\user\source\repos\UchebnayaDinar\UchebnayaPractica\UchebnayaPractica\obj\Debug\Components\TestControl.baml
+C:\Users\user\source\repos\UchebnayaDinar\UchebnayaPractica\UchebnayaPractica\obj\Debug\Pages\AddEditTestPage.baml

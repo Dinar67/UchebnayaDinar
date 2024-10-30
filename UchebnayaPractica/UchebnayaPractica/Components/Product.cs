@@ -1,7 +1,7 @@
-﻿
-using System.Collections.Generic;
-using System.ComponentModel.DataAnnotations;
+﻿using System.Collections.Generic;
 using System.Linq;
+using System.Windows.Controls;
+using System.Windows.Media;
 
 namespace UchebnayaPractica.Database
 {
@@ -38,6 +38,17 @@ namespace UchebnayaPractica.Database
             return products;
         }
 
-        
+        public TextBlock Passed
+        {
+            get
+            {
+                foreach(var test in Test)
+                {
+                    if(test.isPassed == false)
+                        return new TextBlock() { Background= Brushes.Red, Text = "Не пройден"};
+                }
+                return new TextBlock() { Background = Brushes.LightGreen, Text = "Пройден" };
+            }
+        }
     }
 }

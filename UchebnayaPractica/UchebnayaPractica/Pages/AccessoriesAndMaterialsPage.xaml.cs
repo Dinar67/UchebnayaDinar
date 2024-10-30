@@ -41,7 +41,7 @@ namespace UchebnayaPractica.Pages
             
             //Поиск
             if (MaterialSearchTb.Text != "")
-                materials = materials.Where(x => x.Article.Contains(MaterialSearchTb.Text) || x.Name.Contains(MaterialSearchTb.Text));
+                materials = materials.Where(x => x.Article.ToLower().Contains(MaterialSearchTb.Text.ToLower()) || x.Name.ToLower().Contains(MaterialSearchTb.Text.ToLower()));
 
             //Сортировка
             if (MaterialSortCb.SelectedIndex == 1)
@@ -75,7 +75,7 @@ namespace UchebnayaPractica.Pages
 
             //Поиск
             if (AccessoriesSearchTb.Text != "")
-                accessories = accessories.Where(x => x.Article.Contains(AccessoriesSearchTb.Text) || x.Name.Contains(AccessoriesSearchTb.Text));
+                accessories = accessories.Where(x => x.Article.ToLower().Contains(AccessoriesSearchTb.Text.ToLower()) || x.Name.ToLower().Contains(AccessoriesSearchTb.Text.ToLower()));
 
             //Сортировка
             if (AccessoriesSortCb.SelectedIndex == 1)

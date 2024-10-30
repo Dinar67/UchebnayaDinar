@@ -88,10 +88,13 @@ namespace UchebnayaPractica.Pages
 
         private void ClearBtn_Click(object sender, RoutedEventArgs e)
         {
-            foreach (var item in itemLocations)
+            int count = itemLocations.Count;
+            for (int i = 0; i < count; i++)
             {
-                canvas.Children.Remove(item.image);
-                App.db.Location.Remove(item.location);
+                itemLocations.Remove(itemLocations[i]);
+                canvas.Children.Remove(itemLocations[i].image);
+                if(itemLocations[i].location.Id != 0)
+                    App.db.Location.Remove(itemLocations[i].location);
             }
             App.db.SaveChanges();
         }

@@ -25,22 +25,22 @@ namespace UchebnayaPractica
                 }
                 if (App.currentUser.RoleId == 3)
                 {
-                    App.mainWindow.SetIcons(true, true, true, true, true, true, false);
+                    App.mainWindow.SetIcons(true, true, true, true, true, true, false, false);
                     MainFrame.Navigate(new EmployeePage());
                 }
                 else if (App.currentUser.RoleId == 4)
                 {
-                    App.mainWindow.SetIcons(false, false, true, true, false, true, false);
-                    MainFrame.Navigate(new MainPage());
+                    App.mainWindow.SetIcons(false, false, true, true, false, true, false, false);
+                    MainFrame.Navigate(new OrderPage());
                 }
                 else if (App.currentUser.RoleId == 1)
                 {
-                    App.mainWindow.SetIcons(false, true, true, true, false, true, true);
-                    MainFrame.Navigate(new MainPage());
+                    App.mainWindow.SetIcons(false, true, true, true, false, true, true, true);
+                    MainFrame.Navigate(new AccessoriesAndMaterialsPage());
                 }
                 else
                 {
-                    App.mainWindow.SetIcons(false, true, true, true, false, true, false);
+                    App.mainWindow.SetIcons(false, true, true, true, false, true, false, false);
                     MainFrame.Navigate(new AccessoriesAndMaterialsPage());
                 }
                 Methods.TakeInformation("Вы успешно зашли в систему!");
@@ -49,7 +49,7 @@ namespace UchebnayaPractica
                 MainFrame.Navigate(new AuthPage());
         }
 
-        public void SetIcons(bool employee, bool materials, bool exit, bool account, bool plan, bool order, bool failure)
+        public void SetIcons(bool employee, bool materials, bool exit, bool account, bool plan, bool order, bool failure, bool test)
         {
             Employee.Visibility = employee ? Visibility.Visible : Visibility.Collapsed;
             Material.Visibility = materials ? Visibility.Visible : Visibility.Collapsed;
@@ -57,7 +57,8 @@ namespace UchebnayaPractica
             Exit.Visibility = exit ? Visibility.Visible : Visibility.Collapsed;
             Plan.Visibility = plan ? Visibility.Visible : Visibility.Collapsed;
             Order.Visibility = order ? Visibility.Visible : Visibility.Collapsed;
-            Failure.Visibility = failure ? Visibility.Visible : Visibility.Collapsed;           
+            Failure.Visibility = failure ? Visibility.Visible : Visibility.Collapsed;
+            Test.Visibility = test ? Visibility.Visible : Visibility.Collapsed;           
         }
 
         private void Image_MouseDown(object sender, System.Windows.Input.MouseButtonEventArgs e)
@@ -70,7 +71,7 @@ namespace UchebnayaPractica
             if (File.Exists(@"RememberMe.txt"))
                 File.Delete(@"RememberMe.txt");
             MainFrame.Navigate(new AuthPage());
-            SetIcons(false, false, false, false, false, false, false);
+            SetIcons(false, false, false, false, false, false, false, false);
         }
 
         private void Material_MouseDown(object sender, System.Windows.Input.MouseButtonEventArgs e)
@@ -101,6 +102,11 @@ namespace UchebnayaPractica
         private void Failure_MouseDown(object sender, System.Windows.Input.MouseButtonEventArgs e)
         {
             MainFrame.Navigate(new FailurePage());
+        }
+
+        private void Test_MouseDown(object sender, System.Windows.Input.MouseButtonEventArgs e)
+        {
+            MainFrame.Navigate(new TestPage());
         }
     }
 }

@@ -49,7 +49,7 @@
           <Key>
             <PropertyRef Name="Id" />
           </Key>
-          <Property Name="Id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
           <Property Name="Model" Type="nvarchar" MaxLength="50" />
           <Property Name="FailureStart" Type="datetime" />
           <Property Name="FailureEnd" Type="datetime" />
@@ -232,6 +232,16 @@
           <Property Name="diagram_id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
           <Property Name="version" Type="int" />
           <Property Name="definition" Type="varbinary(max)" />
+        </EntityType>
+        <EntityType Name="Test">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="Name" Type="nvarchar(max)" />
+          <Property Name="isPassed" Type="bit" />
+          <Property Name="Description" Type="nvarchar(max)" />
+          <Property Name="IdProduct" Type="int" />
         </EntityType>
         <EntityType Name="TypeAccessories">
           <Key>
@@ -709,6 +719,18 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
+        <Association Name="FK_Test_Product">
+          <End Role="Product" Type="Self.Product" Multiplicity="0..1" />
+          <End Role="Test" Type="Self.Test" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Product">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="Test">
+              <PropertyRef Name="IdProduct" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
         <Association Name="FK_User_Role">
           <End Role="Role" Type="Self.Role" Multiplicity="0..1" />
           <End Role="User" Type="Self.User" Multiplicity="*" />
@@ -758,6 +780,7 @@
           <EntitySet Name="StatusOrder" EntityType="Self.StatusOrder" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="Supplier" EntityType="Self.Supplier" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="sysdiagrams" EntityType="Self.sysdiagrams" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Test" EntityType="Self.Test" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="TypeAccessories" EntityType="Self.TypeAccessories" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="TypeEquipment" EntityType="Self.TypeEquipment" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="TypeMaterial" EntityType="Self.TypeMaterial" Schema="dbo" store:Type="Tables" />
@@ -896,6 +919,10 @@
           <AssociationSet Name="FK_StatusOrder_OrderStatus1" Association="Self.FK_StatusOrder_OrderStatus1">
             <End Role="OrderStatus" EntitySet="OrderStatus" />
             <End Role="StatusOrder" EntitySet="StatusOrder" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Test_Product" Association="Self.FK_Test_Product">
+            <End Role="Product" EntitySet="Product" />
+            <End Role="Test" EntitySet="Test" />
           </AssociationSet>
           <AssociationSet Name="FK_User_Role" Association="Self.FK_User_Role">
             <End Role="Role" EntitySet="Role" />
@@ -1082,6 +1109,11 @@
             <End Role="Equipment" EntitySet="Equipment" />
             <End Role="HardwareFailure" EntitySet="HardwareFailure" />
           </AssociationSet>
+          <EntitySet Name="Test" EntityType="UchebkaModel.Test" />
+          <AssociationSet Name="FK_Test_Product" Association="UchebkaModel.FK_Test_Product">
+            <End Role="Product" EntitySet="Product" />
+            <End Role="Test" EntitySet="Test" />
+          </AssociationSet>
         </EntityContainer>
         <EntityType Name="AcessoriesImage">
           <Key>
@@ -1122,6 +1154,7 @@
           <NavigationProperty Name="OperationSpecification" Relationship="UchebkaModel.FK_OperationSpecification_Product" FromRole="Product" ToRole="OperationSpecification" />
           <NavigationProperty Name="ProductMaterial" Relationship="UchebkaModel.FK_ProductMaterial_Product" FromRole="Product" ToRole="ProductMaterial" />
           <NavigationProperty Name="Size" Relationship="UchebkaModel.FK_Size_Product" FromRole="Product" ToRole="Size" />
+          <NavigationProperty Name="Test" Relationship="UchebkaModel.FK_Test_Product" FromRole="Product" ToRole="Test" />
         </EntityType>
         <EntityType Name="ProductAccessories">
           <Key>
@@ -1875,6 +1908,29 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
+        <EntityType Name="Test">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Name" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="isPassed" Type="Boolean" />
+          <Property Name="Description" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="IdProduct" Type="Int32" />
+          <NavigationProperty Name="Product" Relationship="UchebkaModel.FK_Test_Product" FromRole="Test" ToRole="Product" />
+        </EntityType>
+        <Association Name="FK_Test_Product">
+          <End Type="UchebkaModel.Product" Role="Product" Multiplicity="0..1" />
+          <End Type="UchebkaModel.Test" Role="Test" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Product">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="Test">
+              <PropertyRef Name="IdProduct" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
       </Schema>
     </edmx:ConceptualModels>
     <!-- C-S mapping content -->
@@ -2194,6 +2250,17 @@
                 <ScalarProperty Name="FailureEnd" ColumnName="FailureEnd" />
                 <ScalarProperty Name="FailureStart" ColumnName="FailureStart" />
                 <ScalarProperty Name="Model" ColumnName="Model" />
+                <ScalarProperty Name="Id" ColumnName="Id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Test">
+            <EntityTypeMapping TypeName="UchebkaModel.Test">
+              <MappingFragment StoreEntitySet="Test">
+                <ScalarProperty Name="IdProduct" ColumnName="IdProduct" />
+                <ScalarProperty Name="Description" ColumnName="Description" />
+                <ScalarProperty Name="isPassed" ColumnName="isPassed" />
+                <ScalarProperty Name="Name" ColumnName="Name" />
                 <ScalarProperty Name="Id" ColumnName="Id" />
               </MappingFragment>
             </EntityTypeMapping>

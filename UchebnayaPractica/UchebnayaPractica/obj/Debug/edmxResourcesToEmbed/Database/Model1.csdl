@@ -172,6 +172,11 @@
       <End Role="Equipment" EntitySet="Equipment" />
       <End Role="HardwareFailure" EntitySet="HardwareFailure" />
     </AssociationSet>
+    <EntitySet Name="Test" EntityType="UchebkaModel.Test" />
+    <AssociationSet Name="FK_Test_Product" Association="UchebkaModel.FK_Test_Product">
+      <End Role="Product" EntitySet="Product" />
+      <End Role="Test" EntitySet="Test" />
+    </AssociationSet>
   </EntityContainer>
   <EntityType Name="AcessoriesImage">
     <Key>
@@ -212,6 +217,7 @@
     <NavigationProperty Name="OperationSpecification" Relationship="UchebkaModel.FK_OperationSpecification_Product" FromRole="Product" ToRole="OperationSpecification" />
     <NavigationProperty Name="ProductMaterial" Relationship="UchebkaModel.FK_ProductMaterial_Product" FromRole="Product" ToRole="ProductMaterial" />
     <NavigationProperty Name="Size" Relationship="UchebkaModel.FK_Size_Product" FromRole="Product" ToRole="Size" />
+    <NavigationProperty Name="Test" Relationship="UchebkaModel.FK_Test_Product" FromRole="Product" ToRole="Test" />
   </EntityType>
   <EntityType Name="ProductAccessories">
     <Key>
@@ -962,6 +968,29 @@
       </Principal>
       <Dependent Role="HardwareFailure">
         <PropertyRef Name="Model" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityType Name="Test">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Name" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="isPassed" Type="Boolean" />
+    <Property Name="Description" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="IdProduct" Type="Int32" />
+    <NavigationProperty Name="Product" Relationship="UchebkaModel.FK_Test_Product" FromRole="Test" ToRole="Product" />
+  </EntityType>
+  <Association Name="FK_Test_Product">
+    <End Type="UchebkaModel.Product" Role="Product" Multiplicity="0..1" />
+    <End Type="UchebkaModel.Test" Role="Test" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Product">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="Test">
+        <PropertyRef Name="IdProduct" />
       </Dependent>
     </ReferentialConstraint>
   </Association>

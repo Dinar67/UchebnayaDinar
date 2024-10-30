@@ -71,6 +71,8 @@
         <AssociationConnector Association="UchebkaModel.FK_Size_Unit" />
         <EntityTypeShape EntityType="UchebkaModel.HardwareFailure" Width="1.5" PointX="8.25" PointY="10.75" />
         <AssociationConnector Association="UchebkaModel.FK_HardwareFailure_Equipment" />
+        <EntityTypeShape EntityType="UchebkaModel.Test" Width="1.5" PointX="3" PointY="24.75" />
+        <AssociationConnector Association="UchebkaModel.FK_Test_Product" />
       </Diagram>
     </edmx:Diagrams>
   </edmx:Designer>

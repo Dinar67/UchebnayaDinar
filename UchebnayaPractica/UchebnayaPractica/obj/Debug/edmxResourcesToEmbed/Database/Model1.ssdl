@@ -44,7 +44,7 @@
     <Key>
       <PropertyRef Name="Id" />
     </Key>
-    <Property Name="Id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
     <Property Name="Model" Type="nvarchar" MaxLength="50" />
     <Property Name="FailureStart" Type="datetime" />
     <Property Name="FailureEnd" Type="datetime" />
@@ -227,6 +227,16 @@
     <Property Name="diagram_id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
     <Property Name="version" Type="int" />
     <Property Name="definition" Type="varbinary(max)" />
+  </EntityType>
+  <EntityType Name="Test">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="Name" Type="nvarchar(max)" />
+    <Property Name="isPassed" Type="bit" />
+    <Property Name="Description" Type="nvarchar(max)" />
+    <Property Name="IdProduct" Type="int" />
   </EntityType>
   <EntityType Name="TypeAccessories">
     <Key>
@@ -704,6 +714,18 @@
       </Dependent>
     </ReferentialConstraint>
   </Association>
+  <Association Name="FK_Test_Product">
+    <End Role="Product" Type="Self.Product" Multiplicity="0..1" />
+    <End Role="Test" Type="Self.Test" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Product">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="Test">
+        <PropertyRef Name="IdProduct" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
   <Association Name="FK_User_Role">
     <End Role="Role" Type="Self.Role" Multiplicity="0..1" />
     <End Role="User" Type="Self.User" Multiplicity="*" />
@@ -753,6 +775,7 @@
     <EntitySet Name="StatusOrder" EntityType="Self.StatusOrder" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="Supplier" EntityType="Self.Supplier" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="sysdiagrams" EntityType="Self.sysdiagrams" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Test" EntityType="Self.Test" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="TypeAccessories" EntityType="Self.TypeAccessories" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="TypeEquipment" EntityType="Self.TypeEquipment" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="TypeMaterial" EntityType="Self.TypeMaterial" Schema="dbo" store:Type="Tables" />
@@ -891,6 +914,10 @@
     <AssociationSet Name="FK_StatusOrder_OrderStatus1" Association="Self.FK_StatusOrder_OrderStatus1">
       <End Role="OrderStatus" EntitySet="OrderStatus" />
       <End Role="StatusOrder" EntitySet="StatusOrder" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Test_Product" Association="Self.FK_Test_Product">
+      <End Role="Product" EntitySet="Product" />
+      <End Role="Test" EntitySet="Test" />
     </AssociationSet>
     <AssociationSet Name="FK_User_Role" Association="Self.FK_User_Role">
       <End Role="Role" EntitySet="Role" />

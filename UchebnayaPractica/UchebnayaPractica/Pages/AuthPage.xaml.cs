@@ -33,22 +33,22 @@ namespace UchebnayaPractica.Pages
 
                 if (user.RoleId == 3)
                 {
-                    App.mainWindow.SetIcons(true, true, true, true, true, true, false);
+                    App.mainWindow.SetIcons(true, true, true, true, true, true, false, false);
                     NavigationService.Navigate(new EmployeePage());
                 }
                 else if (user.RoleId == 4)
                 {
-                    App.mainWindow.SetIcons(false, false, true, true, false, true, false);
+                    App.mainWindow.SetIcons(false, false, true, true, false, true, false, false);
                     NavigationService.Navigate(new MainPage());
                 }
                 else if(user.RoleId == 1)
                 {
-                    App.mainWindow.SetIcons(false, true, true, true, false, true, true);
+                    App.mainWindow.SetIcons(false, true, true, true, false, true, true, true);
                     NavigationService.Navigate(new AccessoriesAndMaterialsPage());
                 }
                 else
                 {
-                    App.mainWindow.SetIcons(false, true, true, true, false, true, false);
+                    App.mainWindow.SetIcons(false, true, true, true, false, true, false, false);
                     NavigationService.Navigate(new AccessoriesAndMaterialsPage());
                 }
                 

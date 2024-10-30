@@ -134,6 +134,8 @@ namespace UchebnayaPractica.Pages
                     StatusBtn.Visibility = Visibility.Visible;
                 else if(App.currentUser.RoleId == 5 || App.currentUser.RoleId == 2)
                     StatusBtn.Visibility = Visibility.Visible;
+                else if(App.currentUser.RoleId == 1 && (order.CurrentStatus.IdStatus == 6 || order.CurrentStatus.IdStatus == 7))
+                    StatusBtn.Visibility = Visibility.Visible;
                 else
                     StatusBtn.Visibility = Visibility.Collapsed;
             }
